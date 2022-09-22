@@ -10,7 +10,7 @@ class Hostinger_email extends REST_Controller {
 	public function send_email_get(){
 		try{
 			$success = 0;
-			$from = "support@hireusph.com";
+			$from = "support@kruhayanimalclinic.com";
 			$to = "tristanrosales0@gmail.com";
 			$subject = "Checking PHP mail";
 			$message = "PHP mail works just fine";

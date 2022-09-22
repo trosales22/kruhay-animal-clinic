@@ -17,9 +17,15 @@ class Reservation_model extends CI_Model {
 	public function getAllReservation(){
 		$query = "
 			SELECT 
-				id, user_id, schedule_date, payment_method, service_type, address, status,
-				DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
-			FROM " . Tables::$RESERVATIONS . " ORDER BY created_at DESC";
+				A.id, A.user_id, CONCAT(B.first_name, ' ', B.last_name) as client_name, 
+				B.email AS client_email, B.contact_number as client_contact_number, A.schedule_date, 
+				A.payment_method, A.service_type, A.address, A.status,
+				DATE_FORMAT(A.created_at, '%M %d, %Y %r') as created_at 
+			FROM 
+				" . Tables::$RESERVATIONS . " A 
+			LEFT JOIN 
+				" . Tables::$USERS . " B ON A.user_id = B.user_id 
+			ORDER BY created_at DESC";
 
 		$stmt = $this->db->query($query);
 		return $stmt->result();
@@ -42,23 +48,18 @@ class Reservation_model extends CI_Model {
 	private function _sendSuccessfulReservationNotifToClientEmail(array $booking_params, array $email_params){
 		try{
 			$success = 0;
-			$from = "support@hireusph.com";
+			$from = "support@kruhayanimalclinic.com";
 			$to = $email_params['client_details']->email;
 			$message = '';
-			$subject = "Hire Us | Congratulations for a successful booking!";
+			$subject = "Kruhay Animal Clinic | Congratulations for a successful reservation!";
 			
 			$message = "Hi " . $email_params['client_details']->fullname . "!\n\n";
-			$message .= "Below are your booking details:\n\n";
-			
-			$message .= "Booking ID: " . $booking_params['booking_generated_id'] . "\n";
-			$message .= "Talent Fullname: " . $email_params['talent_details']->fullname . "\n";
-			$message .= "Talent Category: " . $email_params['talent_details']->category_names . "\n";
-			$message .= "Schedule:\n" . $booking_params['booking_date'] . '\n' . $booking_params['booking_date']  . "\n";
-			$message .= "Event Title: " . $booking_params['booking_event_title'] . "\n";
-			$message .= "Venue: " . $booking_params['booking_venue_location'] . "\n";
-			$message .= "Talent Fee: ₱" . $booking_params['booking_talent_fee'] . "\n";
-			$message .= "Other Details: " . $booking_params['booking_other_details'] . "\n\n";
-			$message .= "Thank you for supporting Hire Us PH.\n";
+			$message .= "Below are your reservation details:\n\n";
+			$message .= "Schedule:\n" . $booking_params['schedule_date'] . "\n";
+			$message .= "Service Type: " . $booking_params['service_type'] . "\n";
+			$message .= "Address: " . $booking_params['address'] . "\n";
+			$message .= "Reservation Fee: ₱200.00\n";
+			$message .= "Thank you for supporting Kruhay Animal Clinic.\n";
 			
 			$headers = "From:" . $from;
 			mail($to, $subject, $message, $headers);

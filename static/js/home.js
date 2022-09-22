@@ -28,6 +28,7 @@ $('#tbl_reservations').DataTable();
 $('#tbl_products').DataTable();
 
 $('#inputProductAmount').maskMoney();
+$('#frmEditProductTxtProductAmount').maskMoney();
 
 //products
 function addProduct(){
@@ -105,3 +106,146 @@ $('.btnAddProduct').click(function(){
 });
 
 addProduct();
+
+$('.btnEditProduct').click(function(){
+	var productId = $(this).data('id');
+	var url = base_url() + 'api/products/get_product_by_id?product_id=' + productId;
+	$.getJSON(url, function(response) {
+		$("input[name='product_id']").val(response.id);
+		$("input[id='frmEditProductTxtProductName']").val(response.name);
+		$("textarea[id='frmEditProductTxtProductShortDesc']").val(response.short_desc);
+		$("textarea[id='frmEditProductTxtProductLongDesc']").val(response.long_desc);
+		$("input[id='frmEditProductTxtProductAmount']").val(response.amount);
+		$("input[id='frmEditProductTxtProductQuantity']").val(response.quantity);
+	});
+});
+
+function modifyProduct(){
+	$("#frmEditProduct").submit(function(e) {
+		e.preventDefault();
+		var formAction = e.currentTarget.action;
+		var formData = new FormData(this);
+		var formType = "POST";
+
+		Swal.fire({
+			title: 'Confirmation',
+			text: "Are you sure you want to modify this product?",
+			icon: 'warning',
+			showCancelButton: true,
+			reverseButtons: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+			if (result.value) {
+				$.ajax({
+					url: formAction,
+					type: formType,
+					data: formData,
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+					success: function(data) {
+						var obj = data;
+							
+						if(obj.flag === 0){
+							Swal.fire(
+								'Error!',
+								obj.msg,
+								'error'
+							);
+						}else{
+							Swal.fire({
+								title: 'Success!',
+								text: obj.msg,
+								icon: 'success',
+								allowOutsideClick: false,
+								allowEscapeKey: false,
+								showCancelButton: false,
+								confirmButtonText: 'Ok, Got It!'
+							}).then((result) => {
+								if (result.value) {
+									location.replace(base_url() + 'admin_home');
+								}
+							});
+						}
+					},
+					error: function(xhr, status, error){
+						var errorMessage = xhr.status + ': ' + xhr.statusText;
+						Swal.fire(
+							'Error!',
+							errorMessage,
+							'error'
+						);
+					 }
+				});	
+			}
+		});
+	});
+}
+
+modifyProduct();
+
+function deleteProduct(){
+	$('.btnDeleteProduct').click(function(){
+		var productId = $(this).data('id');
+
+		Swal.fire({
+			title: 'Confirmation',
+			text: "Are you sure you want to delete this product?",
+			icon: 'warning',
+			showCancelButton: true,
+			reverseButtons: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+			if (result.value) {
+				$.ajax({
+					url: base_url() + 'api/products/delete_product?product_id=' + productId,
+					type: 'DELETE',
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+					success: function(data) {
+						var obj = data;
+							
+						if(obj.flag === 0){
+							Swal.fire(
+								'Error!',
+								obj.msg,
+								'error'
+							);
+						}else{
+							Swal.fire({
+								title: 'Success!',
+								text: obj.msg,
+								icon: 'success',
+								allowOutsideClick: false,
+								allowEscapeKey: false,
+								showCancelButton: false,
+								confirmButtonText: 'Ok, Got It!'
+							}).then((result) => {
+								if (result.value) {
+									location.replace(base_url() + 'admin_home');
+								}
+							});
+						}
+					},
+					error: function(xhr, status, error){
+						var errorMessage = xhr.status + ': ' + xhr.statusText;
+						Swal.fire(
+							'Error!',
+							errorMessage,
+							'error'
+						);
+					 }
+				});	
+			}
+		});
+	});
+}
+
+deleteProduct();

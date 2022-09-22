@@ -50,7 +50,7 @@
 
 			<div class="alert alert-info">
 				<strong>Reminder!</strong>
-				<br />Maximum width: <b>1000px</b> | Maximum height: <b>1000px</b> | Maximum file size: <b>2MB</b>
+				<br />Maximum width: <b>5000px</b> | Maximum height: <b>5000px</b> | Maximum file size: <b>5MB</b>
 			</div>
           </div>
           

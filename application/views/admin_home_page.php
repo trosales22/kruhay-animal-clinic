@@ -80,55 +80,40 @@
                 <table class="table table-bordered" id="tbl_reservations" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Profile Picture</th>
-                      <th>Name</th>
-                      <th>Screen Name</th>
-                      <th>Birth Date</th>
-											<th>Gender</th>
-                      <th>Actions</th>
+                      <th>Client Details</th>
+                      <th>Schedule Date</th>
+                      <th>Service Type</th>
+                      <th>Address (if Home Service)</th>
+                      <th>Status</th>
+                      <th>Date Created</th>
                     </tr>
                   </thead>
                   
-                  <!-- <tbody>
-										<?php foreach($talents as $talent){?>
+                  <tbody>
+										<?php foreach($reservations as $reservation){?>
 											<tr>
-                        <td style="text-align: center;">
-                          <?php 
-                            if(empty($talent->talent_profile_picture)){
-                              echo '<div class="alert alert-danger">
-                                      <span class="icon text-red-50" style="margin-right: auto;">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                      </span> <b>NO IMAGE AVAILABLE!</b>
-                                    </div>';
-                            }else{
-                              echo "<img src='" . $talent->talent_profile_picture . "' style='width: 150px; height: 150px;' />";
-                            }
-                          ?>
+                        <td>
+                          <b>Name:</b> <?php echo $reservation->client_name;?><br/>
+                          <b>Contact #:</b> <?php echo $reservation->client_contact_number;?><br/>
+                          <b>Email:</b> <?php echo $reservation->client_email;?><br/>
                         </td>
-                        <td><?php echo $talent->fullname;?></td>
-                        <td><?php echo $talent->screen_name;?></td>
-												<td><?php echo $talent->birth_date;?></td>
-												<td><?php echo $talent->gender;?></td>
-												<td>
-													<a href="#" data-toggle="modal" data-id="<?php echo $talent->talent_id;?>" data-target="#viewOrEditTalentOrModelModal" class="btnViewOrModifyTalent btn btn-info btn-icon-split">
-														<span class="icon text-white-50">
-															<i class="fas fa-edit"></i>
-														</span>
-														<span class="text">View or Modify</span>
-													</a>
-												</td>
+												<td><?php echo $reservation->schedule_date;?></td>
+												<td><?php echo $reservation->service_type;?></td>
+												<td><?php echo $reservation->address;?></td>
+                        <td><?php echo $reservation->status;?></td>
+                        <td><?php echo $reservation->created_at;?></td>
 											</tr> 
                      <?php }?>
-                  </tbody> -->
+                  </tbody>
 
                   <tfoot>
                     <tr>
-                      <th>Profile Picture</th>
-                      <th>Name</th>
-                      <th>Screen Name</th>
-                      <th>Birth Date</th>
-											<th>Gender</th>
-                      <th>Actions</th>
+                      <th>Client Details</th>
+                      <th>Schedule Date</th>
+                      <th>Service Type</th>
+                      <th>Address (if Home Service)</th>
+                      <th>Status</th>
+                      <th>Date Created</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -171,7 +156,7 @@
 											<tr>
                         <td style="text-align: center;">
                           <?php 
-                            if(empty($product->file_name)){
+                            if(empty($product->file_name) || is_null($product->file_name)){
                               echo '<div class="alert alert-danger">
                                       <span class="icon text-red-50" style="margin-right: auto;">
                                         <i class="fas fa-exclamation-triangle"></i>
@@ -240,6 +225,7 @@
 
   <?php include 'pages/admin/modals/logout.php';?>
   <?php include 'pages/admin/modals/add_product.php';?>
+  <?php include 'pages/admin/modals/edit_product.php';?>
 	
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
