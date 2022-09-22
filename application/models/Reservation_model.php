@@ -2,19 +2,22 @@
 date_default_timezone_set("Asia/Manila");
 include_once APPPATH . 'models/Tables.php';
 
-class Reservation_model extends CI_Model {
-	public function submitReservation(array $params){
-		try{	
+class Reservation_model extends CI_Model
+{
+	public function submitReservation(array $params)
+	{
+		try {
 			$this->db->insert(Tables::$RESERVATIONS, $params);
 			return $this->db->insert_id();
 			//$this->_sendSuccessfulReservationNotifToClientEmail($booking_params, $email_params);
-		}catch(PDOException $e){
+		} catch (PDOException $e) {
 			$msg = $e->getMessage();
 			$this->db->trans_rollback();
 		}
 	}
 
-	public function getAllReservation(){
+	public function getAllReservation()
+	{
 		$query = "
 			SELECT 
 				A.id, A.user_id, CONCAT(B.first_name, ' ', B.last_name) as client_name, 
@@ -31,7 +34,8 @@ class Reservation_model extends CI_Model {
 		return $stmt->result();
 	}
 
-	public function getReservationById($id){
+	public function getReservationById($id)
+	{
 		$params = array($id);
 		$query = "
 			SELECT 
@@ -45,14 +49,15 @@ class Reservation_model extends CI_Model {
 		return $stmt->result();
 	}
 
-	private function _sendSuccessfulReservationNotifToClientEmail(array $booking_params, array $email_params){
-		try{
+	private function _sendSuccessfulReservationNotifToClientEmail(array $booking_params, array $email_params)
+	{
+		try {
 			$success = 0;
 			$from = "support@kruhayanimalclinic.com";
 			$to = $email_params['client_details']->email;
 			$message = '';
 			$subject = "Kruhay Animal Clinic | Congratulations for a successful reservation!";
-			
+
 			$message = "Hi " . $email_params['client_details']->fullname . "!\n\n";
 			$message .= "Below are your reservation details:\n\n";
 			$message .= "Schedule:\n" . $booking_params['schedule_date'] . "\n";
@@ -60,12 +65,12 @@ class Reservation_model extends CI_Model {
 			$message .= "Address: " . $booking_params['address'] . "\n";
 			$message .= "Reservation Fee: ₱200.00\n";
 			$message .= "Thank you for supporting Kruhay Animal Clinic.\n";
-			
+
 			$headers = "From:" . $from;
 			mail($to, $subject, $message, $headers);
-			$success  = 1;
-		}catch (Exception $e){
-			$msg = $e->getMessage();      
+			$success = 1;
+		} catch (Exception $e) {
+			$msg = $e->getMessage();
 		}
 	}
 }

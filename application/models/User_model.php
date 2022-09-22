@@ -2,14 +2,16 @@
 date_default_timezone_set("Asia/Manila");
 include_once APPPATH . 'models/Tables.php';
 
-class User_model extends CI_Model {
-	public function loginUser(array $data){
+class User_model extends CI_Model
+{
+	public function loginUser(array $data)
+	{
 		$params = array(
-					$data['username_or_email'],
-					$data['username_or_email'],
-					$data['password'], 
-					true
-				);
+			$data['username_or_email'],
+			$data['username_or_email'],
+			$data['password'],
+			true
+		);
 		$query = "
 			SELECT 
 				username
@@ -17,12 +19,13 @@ class User_model extends CI_Model {
 				" . Tables::$USERS . " 
 			WHERE 
 				username = ? OR email = ? AND password = ? AND is_active = ?";
-				
+
 		$stmt = $this->db->query($query, $params);
 		return $stmt->num_rows();
 	}
 
-	public function loginClient(array $data){
+	public function loginClient(array $data)
+	{
 		$params = array($data['email'], $data['password'], true, 'CLIENT');
 		$query = "
 			SELECT 
@@ -31,12 +34,13 @@ class User_model extends CI_Model {
 				" . Tables::$USERS . " 
 			WHERE 
 				email = ? AND password = ? AND is_active = ? AND role_type=?";
-				
+
 		$stmt = $this->db->query($query, $params);
 		return $stmt->num_rows();
 	}
 
-	public function getUserInformation($usernameOrEmail){
+	public function getUserInformation($usernameOrEmail)
+	{
 		$params = array($usernameOrEmail, $usernameOrEmail, true);
 		$query = "
 			SELECT 
@@ -51,7 +55,8 @@ class User_model extends CI_Model {
 		return $stmt->result();
 	}
 
-	public function getClientInfo($email){
+	public function getClientInfo($email)
+	{
 		$params = array($email, true);
 		$query = "
 			SELECT 
@@ -66,7 +71,8 @@ class User_model extends CI_Model {
 		return $stmt->result();
 	}
 
-	public function getUserRole($user_id){
+	public function getUserRole($user_id)
+	{
 		$params = array($user_id);
 		$query = "
 			SELECT 
@@ -79,8 +85,9 @@ class User_model extends CI_Model {
 		$stmt = $this->db->query($query, $params);
 		return $stmt->result();
 	}
-	 
-	public function insertClient(array $data) {
+
+	public function insertClient(array $data)
+	{
 		$this->db->insert(Tables::$USERS, array(
 			'first_name' => $data['first_name'],
 			'last_name' => $data['last_name'],
