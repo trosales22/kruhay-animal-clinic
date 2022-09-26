@@ -43,7 +43,7 @@ if( ISSET( $_SERVER['HTTP_HOST'] ) ){
 	$base_url_str = $http_request.'://'.$_SERVER['HTTP_HOST'].'/kruhay-animal-clinic/';
 	
 	//DEVELOPMENT
-	//$base_url_str 	= $http_request.'://'.$_SERVER['HTTP_HOST'].'/';
+	//$base_url_str = $http_request.'://'.$_SERVER['HTTP_HOST'].'/';
 }
 
 $config['base_url'] = $base_url_str;

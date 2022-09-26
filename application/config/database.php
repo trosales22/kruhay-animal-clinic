@@ -75,25 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-
-	//LOCAL SERVER
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'root',
 	'database' => 'db_kruhay_animal_clinic',
-	
-	//DEVELOPMENT SERVER
-	// 'hostname' => '194.59.164.85',
-	// 'username' => 'u191444882_hireus_admin',
-	// 'password' => 'teamhireus03',
-	// 'database' => 'u191444882_hireusph_dev',
-	
-	//PRODUCTION SERVER
-	// 'hostname' => 'localhost',
-	// 'username' => 'u483267008_dbhu',
-	// 'password' => 'canthire01',
-	// 'database' => 'u483267008_hireus',
-	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
