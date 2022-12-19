@@ -1,5 +1,5 @@
 <?php
-	$sessionData = $this->session->userdata('logged_in');
+	$sessionData = $this->session->userdata('client_session');
 
     if($sessionData){
         $sessionFullname = $sessionData['first_name'] . ' ' . $sessionData['last_name'];

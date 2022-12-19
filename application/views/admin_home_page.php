@@ -1,5 +1,5 @@
 <?php
-	$session_data = $this->session->userdata('logged_in');
+	$session_data = $this->session->userdata('admin_session');
 	$session_username = $session_data['username'];
 
 	if (!$session_data) {

@@ -1,5 +1,5 @@
 <?php
-	$sessionData = $this->session->userdata('logged_in');
+	$sessionData = $this->session->userdata('client_session');
     $userId = null;
     $fullName = null;
     $email = null;

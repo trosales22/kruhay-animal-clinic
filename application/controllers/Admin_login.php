@@ -29,14 +29,14 @@ class Admin_login extends CI_Controller {
 
 		if(empty($result)){
 			$res = array(
-				'status' 	=> 'UNKNOWN_USER',
-				'msg'		=> 'Unknown user. Please try again!'
+				'status' => 'UNKNOWN_USER',
+				'msg' => 'Unknown user. Please try again!'
 			);
 		}else{
 			if(password_verify($inputs['password'], $result[0]->password)){
 				$fields = array(
-					'username_or_email' 	=> $inputs['username_or_email'],
-					'password' 				=> $result[0]->password
+					'username_or_email' => $inputs['username_or_email'],
+					'password' => $result[0]->password
 				);
 				
 				$count = $this->user_model->loginUser($fields);
@@ -56,7 +56,7 @@ class Admin_login extends CI_Controller {
 						);
 						
 						$res = $session_data;
-						$this->session->set_userdata('logged_in', $session_data);
+						$this->session->set_userdata('admin_session', $session_data);
 					}else{
 						$res = array(
 							'status' => 'INVALID_ROLE', 
@@ -81,7 +81,7 @@ class Admin_login extends CI_Controller {
 	}
 
 	public function user_logout(){    
-        if ($this->session->userdata('logged_in')) {
+        if ($this->session->userdata('admin_session')) {
 			$this->session->unset_userdata('status');
 			$this->session->unset_userdata('user_id');
 			$this->session->unset_userdata('username');
@@ -89,7 +89,7 @@ class Admin_login extends CI_Controller {
 			$this->session->unset_userdata('first_name');
 			$this->session->unset_userdata('last_name');
 			$this->session->unset_userdata('role_code');
-            $this->session->unset_userdata('logged_in');
+            $this->session->unset_userdata('admin_session');
 		}
 		
         redirect('admin_login');

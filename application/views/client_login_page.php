@@ -1,5 +1,5 @@
 <?php
-	$sessionData = $this->session->userdata('logged_in');
+	$sessionData = $this->session->userdata('client_session');
 
     if($sessionData){
         redirect(base_url());

@@ -25,35 +25,34 @@ $("#frmLoginAdmin").submit(function(e) {
 			var res = $.parseJSON(data);
 
 			if(res.status !== "OK"){
-				$.alert({
-					title: 'Warning!',
-					content: res.msg,
-					useBootstrap: false,
-					theme: 'supervan',
-					buttons: {
-						'Ok, Got It!': function () {
-							//do nothing
-						}
-					}
-				});
+				Swal.fire(
+					'Error!',
+					res.msg,
+					'error'
+				);
 			}else{
-				$.alert({
-					title: 'Welcome Home!',
-					content: 'Successfully logged in.',
-					useBootstrap: false,
-					theme: 'supervan',
-					buttons: {
-						'Proceed': function () {
-							location.replace(base_url() + 'admin_home');
-						}
+				Swal.fire({
+					title: 'Success!',
+					text: 'Successfully logged in.',
+					icon: 'success',
+					allowOutsideClick: false,
+					allowEscapeKey: false,
+					showCancelButton: false,
+					confirmButtonText: 'Ok, Got It!'
+				}).then((result) => {
+					if (result.value) {
+						location.replace(base_url() + 'admin_home');
 					}
-				});
-
-				
+				});			
 			}
 		},
-		error: function(err){
-			console.log(err.message);
+		error: function(xhr, status, error){
+			var errorMessage = xhr.status + ': ' + xhr.statusText;
+			Swal.fire(
+				'Error!',
+				errorMessage,
+				'error'
+			);
 		}
 	});
 });

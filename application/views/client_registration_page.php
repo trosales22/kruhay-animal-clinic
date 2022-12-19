@@ -1,10 +1,3 @@
-<?php
-	$sessionData = $this->session->userdata('logged_in');
-
-    if($sessionData){
-        redirect(base_url());
-    }
-?>
 <html>
 <head>
 	<title>Kruhay Animal Clinic - Client Registration</title>

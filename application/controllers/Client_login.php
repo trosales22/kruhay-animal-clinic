@@ -52,7 +52,7 @@ class Client_login extends CI_Controller {
 						);
 						
 						$res = $session_data;
-						$this->session->set_userdata('logged_in', $session_data);
+						$this->session->set_userdata('client_session', $session_data);
 					}else{
 						$res = array(
 							'status' => 'INVALID_ROLE', 
@@ -77,7 +77,7 @@ class Client_login extends CI_Controller {
 	}
 
 	public function logout(){    
-        if ($this->session->userdata('logged_in')) {
+        if ($this->session->userdata('client_session')) {
 			$this->session->unset_userdata('status');
 			$this->session->unset_userdata('user_id');
 			$this->session->unset_userdata('username');
@@ -85,7 +85,7 @@ class Client_login extends CI_Controller {
 			$this->session->unset_userdata('first_name');
 			$this->session->unset_userdata('last_name');
 			$this->session->unset_userdata('role_code');
-            $this->session->unset_userdata('logged_in');
+            $this->session->unset_userdata('client_session');
 		}
 		
         redirect('landing');

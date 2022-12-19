@@ -1,6 +1,6 @@
 <?php
-	if ($this->session->userdata('logged_in')) {
-		redirect(base_url('home_page'));
+	if ($this->session->userdata('admin_session')) {
+		redirect(base_url('admin_home'));
 	}
 ?>
 <!DOCTYPE html>
@@ -16,15 +16,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/vendor/animate/animate.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/vendor/css-hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/vendor/animsition/css/animsition.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>static/Login_v18/css/main.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>static/css/flatpickr.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>static/js/libraries/jquery-confirm-v3.3.4/dist/jquery-confirm.min.css">
+	<link href="<?php echo base_url(); ?>static/css/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #666666;">
-	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -63,13 +60,9 @@
 	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/animsition/js/animsition.min.js"></script>
 	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/bootstrap/js/popper.js"></script>
 	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/select2/select2.min.js"></script>
-	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/daterangepicker/moment.min.js"></script>
-	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="<?php echo base_url(); ?>static/Login_v18/vendor/countdowntime/countdowntime.js"></script>
 	<script src="<?php echo base_url(); ?>static/Login_v18/js/main.js"></script>
 	<script src="<?php echo base_url(); ?>static/js/libraries/flatpickr/flatpickr.js"></script>
-	<script src="<?php echo base_url(); ?>static/js/libraries/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<script src="<?php echo base_url(); ?>static/js/admin_login.js"></script>
 </body>
 </html>
