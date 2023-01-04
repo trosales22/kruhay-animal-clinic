@@ -61,8 +61,9 @@
                     <div class="col-6 p-0">
                         <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-3.jpg" alt="">
                     </div>
-                </div>
+                </div><br/>
             </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d123636.0534256335!2d120.95846437633963!3d14.448665856185597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d14.448620799999999!2d121.02834639999999!5e0!3m2!1sen!2sph!4v1672839895322!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <!-- About End -->

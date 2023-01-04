@@ -32,7 +32,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_created_at_updated_at_index` (`created_at`,`updated_at`) USING BTREE,
   KEY `products_name_index` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `reservations`;
 CREATE TABLE `reservations` (
@@ -75,14 +75,18 @@ CREATE TABLE `users` (
   KEY `users_created_at_index` (`created_at`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-INSERT INTO `products` (`id`, `name`, `short_desc`, `long_desc`, `file_name`, `amount`, `quantity`, `created_at`, `updated_at`) VALUES
-(1, 'Product #1', 'Product #1 Desc', 'Product #1 Desc', '1663170207_9920.jpeg', '200.00', '50', '2022-09-14 23:43:27', NULL),
-(2, 'Product #2', 'Product #2 Desc', 'Product #2 Desc', '1663208782_8580.jpeg', '200.00', '200', '2022-09-15 10:26:22', NULL);
+DROP TABLE IF EXISTS `feedbacks`;
+CREATE TABLE `feedbacks` ( 
+  `id` int(11) NOT NULL AUTO_INCREMENT , 
+  `name` VARCHAR(255) NOT NULL, 
+  `email` VARCHAR(255) NOT NULL, 
+  `subject` VARCHAR(255) NOT NULL, 
+  `message` LONGTEXT NOT NULL, 
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+  PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 INSERT INTO `users` (`user_id`, `username`, `first_name`, `last_name`, `email`, `contact_number`, `password`, `is_active`, `role_type`, `address`, `created_at`) VALUES
 (1, 'admin', 'Admin', 'Admin', 'admin.kruhayclinic@gmail.com', '09999999999', '$2y$10$vxxd8xOgEyqQUoKw0BtB1eJ461VqWVxn1q4daZiFhmmS/JZrPi.7m', '1', 'SUPER_ADMIN', NULL, '2019-07-20 10:38:15');
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
