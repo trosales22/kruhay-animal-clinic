@@ -19,6 +19,7 @@
                 <a href="<?php echo base_url(); ?>" class="nav-item nav-link">Home</a>
                 <a href="<?php echo base_url(); ?>about" class="nav-item nav-link">About</a>
                 <a href="<?php echo base_url(); ?>products" class="nav-item nav-link">Products</a>
+                <a href="<?php echo base_url(); ?>services" class="nav-item nav-link">Services</a>
                 <a href="<?php echo base_url(); ?>bookings" class="nav-item nav-link">Booking</a>
                 <a href="<?php echo base_url(); ?>contact" class="nav-item nav-link">Contact Us</a>
                 <?php

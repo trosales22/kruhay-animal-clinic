@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kruhay Animal Clinic - Products</title>
+    <title>Kruhay Animal Clinic - Services</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
@@ -37,35 +37,22 @@
     <div class="container-fluid bg-light pt-5">
         <div class="container py-5">
             <div class="d-flex flex-column text-center mb-5">
-                <h4 class="text-secondary mb-3">Our Products</h4>
-                <h1 class="display-4 m-0"><span class="text-primary">Premium</span> Pet Products</h1>
+                <h1 class="text-secondary mb-3"><span class="text-primary">Our</span> Services</h1>
             </div>
             <div class="row pb-3">
                 <?php 
-                    if(empty($products)){
+                    if(empty($services)){
                         echo "<img src='" . base_url() . "static/images/no_record_found.png' style='width: 250px; height: 100%; margin-left: auto; margin-right: auto;' />";
                     }else{
                 ?>
-                <?php foreach($products as $product){?>
+                <?php foreach($services as $service){?>
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                            <?php 
-                                if(empty($product->file_name)){
-                                echo '<div class="alert alert-danger">
-                                        <span class="icon text-red-50" style="margin-right: auto;">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </span> <b>NO IMAGE AVAILABLE!</b>
-                                        </div>';
-                                }else{
-                                echo "<img src='" . $product->file_name . "' style='width: 150px; height: 150px; margin-left: auto; margin-right: auto;' />";
-                                }
-                            ?>
-                            <h3 class="mb-3"><?php echo $product->name;?></h3>
-                            <p style="text-align: left;">
-                                <b>Details:</b> <?php echo $product->short_desc;?></br>
-                                <b>Amount:</b> ₱<?php echo $product->amount;?><br/>
-                                <b>Qty:</b> <?php echo $product->quantity;?>
-                            </p>
+                            <img src="<?php echo base_url(); ?>static/images/pets_symbol.png" style="width: 130px; height: 130px; border-radius: 50%; margin-left: auto; margin-right: auto;" />
+                            <h4 class="mb-3">
+                                <?php echo $service->name;?><br/>
+                                <span class="text-primary">₱<?php echo $service->amount;?></span>
+                            </h4>
                         </div>
                     </div>
                 <?php }}?>
@@ -93,6 +80,5 @@
     <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/client_registration.js"></script>
 </body>
 </html>

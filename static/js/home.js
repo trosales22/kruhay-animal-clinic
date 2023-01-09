@@ -26,9 +26,12 @@ function isEmpty(value){
 //initialize datatable
 $('#tbl_reservations').DataTable();
 $('#tbl_products').DataTable();
+$('#tbl_services').DataTable();
 
 $('#inputProductAmount').maskMoney();
+$('#inputServiceAmount').maskMoney();
 $('#frmEditProductTxtProductAmount').maskMoney();
+$('#frmEditServiceTxtServiceAmount').maskMoney();
 
 //products
 function addProduct(){
@@ -249,3 +252,220 @@ function deleteProduct(){
 }
 
 deleteProduct();
+
+//services
+function addService(){
+	$("#frmAddService").submit(function(e) {
+		e.preventDefault();
+		var formAction = e.currentTarget.action;
+		var formData = new FormData(this);
+		var formType = "POST";
+		
+		Swal.fire({
+			title: 'Confirmation',
+			text: "Are you sure you want to add this service?",
+			icon: 'warning',
+			showCancelButton: true,
+			reverseButtons: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+			if (result.value) {
+				$.ajax({
+					url: formAction,
+					type: formType,
+					data: formData,
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+					success: function(data) {
+						var obj = data;
+							
+						if(obj.flag === 0){
+							Swal.fire(
+								'Error!',
+								obj.msg,
+								'error'
+							);
+						}else{
+							Swal.fire({
+								title: 'Success!',
+								text: obj.msg,
+								icon: 'success',
+								allowOutsideClick: false,
+								allowEscapeKey: false,
+								showCancelButton: false,
+								confirmButtonText: 'Ok, Got It!'
+							}).then((result) => {
+								if (result.value) {
+									location.replace(base_url() + 'admin_home');
+								}
+							});
+						}
+					},
+					error: function(xhr, status, error){
+						var errorMessage = xhr.status + ': ' + xhr.statusText;
+						Swal.fire(
+							'Error!',
+							errorMessage,
+							'error'
+						);
+					 }
+				});	
+			}
+		});
+	});
+}
+
+$('.btnAddService').click(function(){
+	//clear all fields
+	$("input[name='name']").val("");
+	$("input[name='short_desc']").val("");
+	$("input[name='long_desc']").val("");
+	$("input[name='amount']").val("");
+});
+
+addService();
+
+$('.btnEditService').click(function(){
+	var serviceId = $(this).data('id');
+	var url = base_url() + 'api/services/get_service_by_id?service_id=' + serviceId;
+	$.getJSON(url, function(response) {
+		$("input[name='service_id']").val(response.id);
+		$("input[id='frmEditServiceTxtServiceName']").val(response.name);
+		$("textarea[id='frmEditServiceTxtServiceShortDesc']").val(response.short_desc);
+		$("input[id='frmEditServiceTxtServiceAmount']").val(response.amount);
+	});
+});
+
+function modifyService(){
+	$("#frmEditService").submit(function(e) {
+		e.preventDefault();
+		var formAction = e.currentTarget.action;
+		var formData = new FormData(this);
+		var formType = "POST";
+
+		Swal.fire({
+			title: 'Confirmation',
+			text: "Are you sure you want to modify this service?",
+			icon: 'warning',
+			showCancelButton: true,
+			reverseButtons: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+			if (result.value) {
+				$.ajax({
+					url: formAction,
+					type: formType,
+					data: formData,
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+					success: function(data) {
+						var obj = data;
+							
+						if(obj.flag === 0){
+							Swal.fire(
+								'Error!',
+								obj.msg,
+								'error'
+							);
+						}else{
+							Swal.fire({
+								title: 'Success!',
+								text: obj.msg,
+								icon: 'success',
+								allowOutsideClick: false,
+								allowEscapeKey: false,
+								showCancelButton: false,
+								confirmButtonText: 'Ok, Got It!'
+							}).then((result) => {
+								if (result.value) {
+									location.replace(base_url() + 'admin_home');
+								}
+							});
+						}
+					},
+					error: function(xhr, status, error){
+						var errorMessage = xhr.status + ': ' + xhr.statusText;
+						Swal.fire(
+							'Error!',
+							errorMessage,
+							'error'
+						);
+					 }
+				});	
+			}
+		});
+	});
+}
+
+modifyService();
+
+function deleteService(){
+	$('.btnDeleteService').click(function(){
+		var serviceId = $(this).data('id');
+
+		Swal.fire({
+			title: 'Confirmation',
+			text: "Are you sure you want to delete this service?",
+			icon: 'warning',
+			showCancelButton: true,
+			reverseButtons: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+			if (result.value) {
+				$.ajax({
+					url: base_url() + 'api/services/delete_service?service_id=' + serviceId,
+					type: 'DELETE',
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+					success: function(data) {
+						var obj = data;
+							
+						if(obj.flag === 0){
+							Swal.fire(
+								'Error!',
+								obj.msg,
+								'error'
+							);
+						}else{
+							Swal.fire({
+								title: 'Success!',
+								text: obj.msg,
+								icon: 'success',
+								allowOutsideClick: false,
+								allowEscapeKey: false,
+								showCancelButton: false,
+								confirmButtonText: 'Ok, Got It!'
+							}).then((result) => {
+								if (result.value) {
+									location.replace(base_url() + 'admin_home');
+								}
+							});
+						}
+					},
+					error: function(xhr, status, error){
+						var errorMessage = xhr.status + ': ' + xhr.statusText;
+						Swal.fire(
+							'Error!',
+							errorMessage,
+							'error'
+						);
+					 }
+				});	
+			}
+		});
+	});
+}
+
+deleteService();

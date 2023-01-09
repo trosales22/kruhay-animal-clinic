@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'landing';
 $route['landing_page'] = 'landing';
 $route['products'] = 'products';
+$route['services'] = 'service';
 $route['about'] = 'about';
 $route['contact'] = 'contact';
 $route['bookings'] = 'bookings';

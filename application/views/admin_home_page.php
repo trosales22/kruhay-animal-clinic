@@ -207,6 +207,71 @@
         </div>
         <!-- End Products -->
 
+        <!-- Begin Services -->
+        <div class="container-fluid">
+          <h1 class="h3 mb-2 text-gray-800">Services</h1>
+					
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <a class="btnAddService btn btn-success btn-icon-split" href="#" data-toggle="modal" data-target="#addServiceModal">
+                <span class="icon text-white-50">
+                  <i class="fas fa-plus-circle"></i>
+                </span>
+                <span class="text">Add Service</span>
+              </a>
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="tbl_services" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+											<th>Description</th>
+                      <th>Amount</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+										<?php foreach($services as $service){?>
+											<tr>
+												<td><?php echo $service->name;?></td>
+												<td><?php echo $service->short_desc;?></td>
+												<td>&#8369;<?php echo $service->amount;?></td>
+												<td>
+													<a href="#" data-toggle="modal" data-id="<?php echo $service->id;?>" data-target="#editServiceModal" class="btnEditService btn btn-success btn-icon-split">
+														<span class="icon text-white-50">
+															<i class="fas fa-edit"></i>
+														</span>
+														<span class="text">Edit</span>
+													</a>
+
+                          <a href="#" data-toggle="modal" data-id="<?php echo $service->id;?>" data-target="#deleteServiceModal" class="btnDeleteService btn btn-danger btn-icon-split">
+														<span class="icon text-white-50">
+															<i class="fas fa-trash"></i>
+														</span>
+														<span class="text">Delete</span>
+													</a>
+												</td>
+											</tr> 
+                     <?php }?>
+                  </tbody>
+
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+											<th>Description</th>
+                      <th>Amount</th>
+                      <th>Actions</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Services -->
       </div>
       <!-- End of Main Content -->
 
@@ -226,6 +291,8 @@
   <?php include 'pages/admin/modals/logout.php';?>
   <?php include 'pages/admin/modals/add_product.php';?>
   <?php include 'pages/admin/modals/edit_product.php';?>
+  <?php include 'pages/admin/modals/add_service.php';?>
+  <?php include 'pages/admin/modals/edit_service.php';?>
 	
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
