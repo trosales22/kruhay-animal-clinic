@@ -17,10 +17,15 @@ class Products extends REST_Controller
 	public function add_product_post()
 	{
 		try {
+			$uploadsPath = 'uploads/products';
+			if(!is_dir($uploadsPath)){
+				mkdir($uploadsPath, 0777, true);
+			}
+
 			$success = 0;
 			$msg = array();
 			$product_image_output = array();
-			$config['upload_path'] = 'uploads/products/';
+			$config['upload_path'] = $uploadsPath;
 			$config['allowed_types'] = 'jpg|jpeg|png';
 			$config['max_size'] = 5000; //set the maximum file size in kilobytes (5MB)
 			$config['max_width'] = 5000;
@@ -57,6 +62,7 @@ class Products extends REST_Controller
 
 			$success = 1;
 		} catch (Exception $e) {
+			$success = 0;
 			$msg = $e->getMessage();
 		}
 
@@ -78,6 +84,11 @@ class Products extends REST_Controller
 	public function update_product_post()
 	{
 		try {
+			$uploadsPath = 'uploads/products';
+			if(!is_dir($uploadsPath)){
+				mkdir($uploadsPath, 0777, true);
+			}
+
 			$success = 0;
 			$msg = array();
 			$product_image_output = array();
@@ -137,7 +148,7 @@ class Products extends REST_Controller
 			if (empty($_FILES['product_img']['name'])) {
 				$payload['file_name'] = $latest_product_img_raw;
 			} else {
-				$config['upload_path'] = 'uploads/products/';
+				$config['upload_path'] = $uploadsPath;
 				$config['allowed_types'] = 'jpg|jpeg|png';
 				$config['max_size'] = 5000; //set the maximum file size in kilobytes (5MB)
 				$config['max_width'] = 5000;
@@ -180,6 +191,7 @@ class Products extends REST_Controller
 			$this->product_model->update($payload);
 			$success = 1;
 		} catch (Exception $e) {
+			$success = 0;
 			$msg = $e->getMessage();
 		}
 

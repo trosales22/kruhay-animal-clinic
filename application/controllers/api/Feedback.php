@@ -28,6 +28,7 @@ class Feedback extends REST_Controller
 
 			$success = 1;
 		} catch (Exception $e) {
+			$success = 0;
 			$msg = $e->getMessage();
 		}
 
