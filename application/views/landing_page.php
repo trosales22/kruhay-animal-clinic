@@ -118,21 +118,21 @@
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Boarding</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>It's taking your dog or cat to a facility away from home for an overnight stay or longer.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h4 class="mb-3">Pet Vaccination & Deworming</h4>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h4 class="mb-3">Pet Vaccination</h4>
+                        <p>Core vaccines are considered vital to all pets based on risk of exposure, severity of disease or transmissibility to humans</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Grooming</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>With proper pet grooming, you will get rid of shedding, fleas, ticks, and various health conditions.</</p>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
             <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                 <h4 class="text-secondary mb-3">Why Choose Us?</h4>
                 <h1 class="display-4 mb-4"><span class="text-primary">Special Care</span> On Pets</h1>
-                <p class="mb-4">Dolor lorem lorem ipsum sit et ipsum. Sadip sea amet diam sed ut vero no sit. Et elitr stet sed sit sed kasd. Erat duo eos et erat sed diam duo</p>
+                <p class="mb-4">Kruhay Animal Clinic welcomes you & your dogs/cats! Our services range from vaccination, diagnosis</p>
                 <div class="row py-2">
                     <div class="col-6">
                         <div class="d-flex align-items-center mb-4">
@@ -191,43 +191,55 @@
             <div class="owl-carousel testimonial-carousel">
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/landing_page/img/testimonial-1.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
-                            <h5>Client Name</h5>
-                            <i>Profession</i>
+                            <h5>Eloisa</h5>
+                            <i>Customer</i>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                    <p class="m-0">
+                        Even before our first visit, Kruhay was already very responsive to my inquiries via Messenger. 
+                        It showed that they have genuine concern for the animals regardless of pay. 
+                        Charlie and I finally went for a check-up today, and he had his best vet experience with Doc Gette and the rest of the staff. 
+                        Glad to have found a reliable vet for my furbaby!
+                    </p>
                 </div>
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/landing_page/img/testimonial-2.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
-                            <h5>Client Name</h5>
-                            <i>Profession</i>
+                            <h5>Clarence</h5>
+                            <i>Customer</i>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                    <p class="m-0">
+                        Doc Rogette is a superbly competent Vet with compassion not just for his animal patient but also for the owners as well. 
+                        We have a lot of dogs (all Aspins) and we entrust them all to his care. We are very appreciative.
+                    </p>
                 </div>
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/landing_page/img/testimonial-3.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
-                            <h5>Client Name</h5>
-                            <i>Profession</i>
+                            <h5>Vianice</h5>
+                            <i>Customer</i>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                    <p class="m-0">Very hands on and friendly doctor and staff.</p>
                 </div>
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/landing_page/img/testimonial-4.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
-                            <h5>Client Name</h5>
-                            <i>Profession</i>
+                            <h5>Brends</h5>
+                            <i>Veterinarian</i>
                         </div>
                     </div>
-                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                    <p class="m-0">
+                        Doc. Rogette takes very good care of Bucky. He patiently answers all of our questions about our puppy. 
+                        He and his staff handle Bucky with so much care and gentleness which makes Bucky comfortable during his appointments. 
+                        He is also responsive to our chats and messages. We are very thankful that we found this clinic. Kudos to Kruhay team
+                    </p>
                 </div>
             </div>
         </div>

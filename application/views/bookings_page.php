@@ -57,28 +57,28 @@
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Boarding</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>It's taking your dog or cat to a facility away from home for an overnight stay or longer.</</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h4 class="mb-3">Pet Vaccination</h4>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>Core vaccines are considered vital to all pets based on risk of exposure, severity of disease or transmissibility to humans.</</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Grooming</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>With proper pet grooming, you will get rid of shedding, fleas, ticks, and various health conditions.</</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h4 class="mb-3">Pet Deworming</h4>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>Deworming is an important preventative care regime for reducing parasites (internal and external) and improving your pet's health.</p>
                     </div>
                 </div>
             </div>
