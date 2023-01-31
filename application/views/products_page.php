@@ -37,8 +37,7 @@
     <div class="container-fluid bg-light pt-5">
         <div class="container py-5">
             <div class="d-flex flex-column text-center mb-5">
-                <h4 class="text-secondary mb-3">Our Products</h4>
-                <h1 class="display-4 m-0"><span class="text-primary">Premium</span> Pet Products</h1>
+                <h1 class="text-secondary mb-3"><span class="text-primary">Our</span> Products</h1>
             </div>
             <div class="row pb-3">
                 <?php 
