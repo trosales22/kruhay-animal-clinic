@@ -1,5 +1,9 @@
 <?php
+require 'vendor/autoload.php';
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+$dotenv = \Dotenv\Dotenv::createImmutable(FCPATH);
+$dotenv->safeLoad();
 
 /*
 | -------------------------------------------------------------------
@@ -75,10 +79,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'db_kruhay_animal_clinic',
+	'hostname' => $_ENV['DB_HOST'],
+	'username' => $_ENV['DB_USERNAME'],
+	'password' => $_ENV['DB_PASSWORD'],
+	'database' => $_ENV['DB_NAME'],
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
