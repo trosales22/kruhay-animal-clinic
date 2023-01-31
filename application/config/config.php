@@ -1,5 +1,9 @@
 <?php
+require 'vendor/autoload.php';
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+$dotenv = \Dotenv\Dotenv::createImmutable(FCPATH);
+$dotenv->safeLoad();
 
 /*
 |--------------------------------------------------------------------------
@@ -39,11 +43,11 @@ if (!EMPTY($_SERVER['HTTPS']) AND $_SERVER['HTTPS'] != 'off'){
 $base_url_str 		= '';
 
 if( ISSET( $_SERVER['HTTP_HOST'] ) ){
-	//LOCAL
-	$base_url_str = $http_request.'://'.$_SERVER['HTTP_HOST'].'/kruhay-animal-clinic/';
-	
-	//DEVELOPMENT
-	//$base_url_str = $http_request.'://'.$_SERVER['HTTP_HOST'].'/';
+	if($_ENV['APP_ENV'] == 'local'){
+		$base_url_str = $http_request.'://'.$_SERVER['HTTP_HOST'].'/kruhay-animal-clinic/';
+	}else{
+		$base_url_str = $http_request.'://'.$_SERVER['HTTP_HOST'].'/';
+	}
 }
 
 $config['base_url'] = $base_url_str;
