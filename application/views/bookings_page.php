@@ -21,7 +21,6 @@
     <!-- Favicon -->
     <link href="<?php echo base_url(); ?>static/images/logo.ico" rel="icon">
     <meta name="description" content="Kruhay Animal Clinic">
-    <meta name="author" content="Tristan Rosales">
 
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 

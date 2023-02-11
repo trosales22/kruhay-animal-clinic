@@ -15,8 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="<?php echo base_url(); ?>static/images/logo.ico"/>
   <meta name="description" content="Kruhay Animal Clinic">
-  <meta name="author" content="Tristan Rosales">
-
+  
   <title>Kruhay Animal Clinic - Admin Home</title>
 
   <!-- Custom fonts for this template -->
