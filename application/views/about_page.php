@@ -39,14 +39,8 @@
                 <h4 class="text-secondary mb-3">About Us</h4>
                 <h5 class="text-muted mb-3">Kruhay Animal Clinic Background</h5>
                 <p class="mb-4">
-                The clinic was name after a Kinaray-a word "Kruhay" means "Long Live!” a language native in Antique. The owner, Dr. Petuco is a proud Antiqueño.
-                Dr. Petuco worked at Doctor Binglo’s Pet Station in Cebu City. He then moved to Manila for Animal Station in White Plains Quezon City 
-                and worked for nine years in Fil-Chinese Animal Clinic in Ortigas Extension before starting his own Animal Clinic, which is the Kruhay Animal Clinic.
-                The clinic was slowly recognized for having a good customer service, experienced and passionate doctor towards his patients (dogs and cats). 
-                Kruhay Animal Clinic has now hundreds of regular customers/client in Parañaque and nearby cities.<br/><br/>
-
-                At first, Dr. Petuco run the clinic by himself before making a team made up of Antiqueños. Three assistants, Carl Jay Onido 21 years old, 
-                Christian Sumande 22 years old, and Ernesto Beloya, 27 years old. Jestoni Beloya, 33 years old is the groomer.
+                At first, Dr. Petuco run the clinic by himself before making a team made up of Antiqueños. 
+                Three assistants, Carl Jay Onido, Christian Sumande, and Ernesto Beloya. Jestoni Beloya is the groomer of the animal clinic.
                 </p>
             </div>
             <div class="col-lg-5">

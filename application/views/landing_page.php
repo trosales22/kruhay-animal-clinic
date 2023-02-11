@@ -190,7 +190,7 @@
             <div class="owl-carousel testimonial-carousel">
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/testimonials/testimonials (1).png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Eloisa</h5>
                             <i>Customer</i>
@@ -205,7 +205,7 @@
                 </div>
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/testimonials/testimonials (2).png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Clarence</h5>
                             <i>Customer</i>
@@ -218,7 +218,7 @@
                 </div>
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/testimonials/testimonials (3).png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Vianice</h5>
                             <i>Customer</i>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="bg-white mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/no_profile_pic.png" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>static/images/testimonials/testimonials (4).png" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Brends</h5>
                             <i>Veterinarian</i>
