@@ -99,7 +99,7 @@ function addProduct(){
 	});
 }
 
-$('.btnAddProduct').click(function(){
+$(document.body).on('click', '.btnAddProduct', function() {
 	//clear all fields
 	$("input[name='name']").val("");
 	$("input[name='short_desc']").val("");
@@ -110,7 +110,7 @@ $('.btnAddProduct').click(function(){
 
 addProduct();
 
-$('.btnEditProduct').click(function(){
+$(document.body).on('click', '.btnEditProduct', function() {
 	var productId = $(this).data('id');
 	var url = base_url() + 'api/products/get_product_by_id?product_id=' + productId;
 	$.getJSON(url, function(response) {
@@ -191,7 +191,7 @@ function modifyProduct(){
 modifyProduct();
 
 function deleteProduct(){
-	$('.btnDeleteProduct').click(function(){
+	$(document.body).on('click', '.btnDeleteProduct', function() {
 		var productId = $(this).data('id');
 
 		Swal.fire({
@@ -319,7 +319,7 @@ function addService(){
 	});
 }
 
-$('.btnAddService').click(function(){
+$(document.body).on('click', '.btnAddService', function() {
 	//clear all fields
 	$("input[name='name']").val("");
 	$("input[name='short_desc']").val("");
@@ -329,7 +329,7 @@ $('.btnAddService').click(function(){
 
 addService();
 
-$('.btnEditService').click(function(){
+$(document.body).on('click', '.btnEditService', function() {
 	var serviceId = $(this).data('id');
 	var url = base_url() + 'api/services/get_service_by_id?service_id=' + serviceId;
 	$.getJSON(url, function(response) {
@@ -408,7 +408,7 @@ function modifyService(){
 modifyService();
 
 function deleteService(){
-	$('.btnDeleteService').click(function(){
+	$(document.body).on('click', '.btnDeleteService', function() {
 		var serviceId = $(this).data('id');
 
 		Swal.fire({
