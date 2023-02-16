@@ -43,7 +43,7 @@ class Product_model extends CI_Model
 				id, name, short_desc, long_desc, amount, quantity,
 				IF( ISNULL(file_name) OR file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', file_name) ) as file_name,
 				DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
-			FROM " . Tables::$PRODUCTS . " ORDER BY created_at DESC";
+			FROM " . Tables::$PRODUCTS . " ORDER BY id ASC";
 
 		$stmt = $this->db->query($query);
 		return $stmt->result();
