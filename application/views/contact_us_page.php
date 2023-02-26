@@ -51,6 +51,10 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
+                            <input type="text" class="form-control p-4" name="mobile_number" placeholder="Mobile Number" required="required" data-validation-required-message="Please enter your mobile number" spellcheck="false" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
                             <input type="email" class="form-control p-4" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" spellcheck="false" />
                             <p class="help-block text-danger"></p>
                         </div>

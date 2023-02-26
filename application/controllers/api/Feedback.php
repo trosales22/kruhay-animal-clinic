@@ -21,6 +21,7 @@ class Feedback extends REST_Controller
 			$msg = array();
 			$this->feedback_model->add(array(
 				'name' => trim($this->input->post('name')),
+				'mobile_number' => trim($this->input->post('mobile_number')),
 				'email' => trim($this->input->post('email')),
 				'subject' => trim($this->input->post('subject')),
 				'message' => trim($this->input->post('message'))

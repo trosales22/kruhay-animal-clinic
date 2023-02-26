@@ -13,7 +13,8 @@ class Feedback_model extends CI_Model
 	{
 		$query = "
 			SELECT 
-				id, name, email, subject, message, DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
+				id, name, mobile_number, email, subject, message, 
+				DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
 			FROM " . Tables::$FEEDBACKS . " ORDER BY created_at DESC";
 
 		$stmt = $this->db->query($query);
@@ -27,7 +28,7 @@ class Feedback_model extends CI_Model
 
 		$query = "
 			SELECT 
-                id, name, email, subject, message
+                id, name, mobile_number, email, subject, message
 			FROM 
 				" . Tables::$FEEDBACKS . " 
 			WHERE 

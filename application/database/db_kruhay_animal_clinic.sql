@@ -94,6 +94,7 @@ DROP TABLE IF EXISTS `feedbacks`;
 CREATE TABLE `feedbacks` ( 
   `id` int(11) NOT NULL AUTO_INCREMENT , 
   `name` VARCHAR(255) NOT NULL, 
+  `mobile_number` VARCHAR(255) NOT NULL, 
   `email` VARCHAR(255) NOT NULL, 
   `subject` VARCHAR(255) NOT NULL, 
   `message` LONGTEXT NOT NULL, 
