@@ -80,7 +80,7 @@
                   <thead>
                     <tr>
                       <th>Client Details</th>
-                      <th>Schedule Date</th>
+                      <th>Schedule Date & Time</th>
                       <th>Service Type</th>
                       <th>Address (if Home Service)</th>
                       <th>Status</th>
@@ -96,7 +96,7 @@
                           <b>Contact #:</b> <?php echo $reservation->client_contact_number;?><br/>
                           <b>Email:</b> <?php echo $reservation->client_email;?><br/>
                         </td>
-												<td><?php echo $reservation->schedule_date . ' ' . $reservation->schedule_time; ?></td>
+												<td><?php echo $reservation->schedule_date . ' (' . $reservation->schedule_time . ')'; ?></td>
 												<td><?php echo $reservation->service_type;?></td>
 												<td><?php echo $reservation->address;?></td>
                         <td><?php echo $reservation->status;?></td>
@@ -108,7 +108,7 @@
                   <tfoot>
                     <tr>
                       <th>Client Details</th>
-                      <th>Schedule Date</th>
+                      <th>Schedule Date & Time</th>
                       <th>Service Type</th>
                       <th>Address (if Home Service)</th>
                       <th>Status</th>
