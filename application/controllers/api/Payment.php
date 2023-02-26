@@ -51,10 +51,12 @@ class Payment extends REST_Controller
 			$name = !empty($jsonObj->name) ? $jsonObj->name : '';
 			$email = !empty($jsonObj->email) ? $jsonObj->email : '';
 			$schedule_date = !empty($jsonObj->schedule_date) ? $jsonObj->schedule_date : '';
+			$schedule_time = !empty($jsonObj->schedule_time) ? $jsonObj->schedule_time : '';
 			$address = !empty($jsonObj->address) ? $jsonObj->address : '';
 			$service_type = !empty($jsonObj->service_type) ? $jsonObj->service_type : '';
 
 			$_SESSION['schedule_date'] = $schedule_date;
+			$_SESSION['schedule_time'] = $schedule_time;
 			$_SESSION['address'] = $address;
 			$_SESSION['service_type'] = $service_type;
 
@@ -115,6 +117,7 @@ class Payment extends REST_Controller
 				$payment_id = $this->reservation_model->submitReservation(array(
 					'user_id' => $user_id,
 					'schedule_date' => $_SESSION['schedule_date'],
+					'schedule_time' => $_SESSION['schedule_time'],
 					'payment_method' => 'E-Wallet',
 					'service_type' => $_SESSION['service_type'],
 					'address' => $_SESSION['address'],
@@ -124,6 +127,7 @@ class Payment extends REST_Controller
 				));
 
 				unset($_SESSION['schedule_date']);
+				unset($_SESSION['schedule_time']);
 				unset($_SESSION['service_type']);
 				unset($_SESSION['address']);
 
@@ -132,6 +136,7 @@ class Payment extends REST_Controller
 				]);
 			} else {
 				unset($_SESSION['schedule_date']);
+				unset($_SESSION['schedule_time']);
 				unset($_SESSION['service_type']);
 				unset($_SESSION['address']);
 

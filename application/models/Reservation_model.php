@@ -21,7 +21,8 @@ class Reservation_model extends CI_Model
 		$query = "
 			SELECT 
 				A.id, A.user_id, CONCAT(B.first_name, ' ', B.last_name) as client_name, 
-				B.email AS client_email, B.contact_number as client_contact_number, A.schedule_date, 
+				B.email AS client_email, B.contact_number as client_contact_number, 
+				A.schedule_date, A.schedule_time,
 				A.payment_method, A.service_type, A.address, A.status,
 				DATE_FORMAT(A.created_at, '%M %d, %Y %r') as created_at 
 			FROM 
@@ -60,7 +61,7 @@ class Reservation_model extends CI_Model
 
 			$message = "Hi " . $email_params['client_details']->fullname . "!\n\n";
 			$message .= "Below are your reservation details:\n\n";
-			$message .= "Schedule:\n" . $booking_params['schedule_date'] . "\n";
+			$message .= "Schedule:\n" . $booking_params['schedule_date'] . " " . $booking_params['schedule_time'] . "\n";
 			$message .= "Service Type: " . $booking_params['service_type'] . "\n";
 			$message .= "Address: " . $booking_params['address'] . "\n";
 			$message .= "Reservation Fee: ₱200.00\n";

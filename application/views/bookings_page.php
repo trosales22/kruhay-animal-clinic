@@ -44,46 +44,7 @@
     <?php include 'pages/landing/topbar.php';?>
     <?php include 'pages/landing/navbar.php';?>
 
-    <!-- Services Start -->
-    <div class="container-fluid bg-light pt-5">
-        <div class="container center">
-            <div class="d-flex flex-column text-center mb-5">
-                <h4 class="text-primary mb-3">Our Services</h4>
-                <h1 class="display-4 m-0"><span class="text-secondary">Premium</span> <span class="text-primary">Pet</span> Services</h1>
-            </div>
-            <div class="row pb-4">
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Boarding</h3>
-                        <p>It's taking your dog or cat to a facility away from home for an overnight stay or longer.</</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h4 class="mb-3">Pet Vaccination</h4>
-                        <p>Core vaccines are considered vital to all pets based on risk of exposure, severity of disease or transmissibility to humans.</</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Grooming</h3>
-                        <p>With proper pet grooming, you will get rid of shedding, fleas, ticks, and various health conditions.</</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h4 class="mb-3">Pet Deworming</h4>
-                        <p>Deworming is an important preventative care regime for reducing parasites (internal and external) and improving your pet's health.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Services End -->
+    <br />
 
     <!-- Booking Start -->
     <div class="container-fluid">
@@ -101,6 +62,13 @@
                                     <input type="text" name="schedule_date" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" data-target="#date" data-toggle="datetimepicker"/>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                 <div class="time" id="time" data-target-input="nearest">
+                                     <input type="text" name="scheduled_time" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Approximate Scheduled Time" data-target="#time" data-toggle="datetimepicker"/>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <input type="text" name="address" required class="form-control border-0 p-4" placeholder="Address (for Home Service)" />
                             </div>
@@ -182,7 +150,48 @@
         </div>
     </div>
     <!-- Booking Start -->
-    
+
+    <!-- Services Start -->
+    <div class="container-fluid bg-light pt-5">
+        <div class="container center">
+            <div class="d-flex flex-column text-center mb-5">
+                <h4 class="text-primary mb-3">Our Services</h4>
+                <h1 class="display-4 m-0"><span class="text-secondary">Premium</span> <span class="text-primary">Pet</span> Services</h1>
+            </div>
+            <div class="row pb-4">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
+                        <h3 class="mb-3">Pet Boarding</h3>
+                        <p>It's taking your dog or cat to a facility away from home for an overnight stay or longer.</</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
+                        <h4 class="mb-3">Pet Vaccination</h4>
+                        <p>Core vaccines are considered vital to all pets based on risk of exposure, severity of disease or transmissibility to humans.</</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
+                        <h3 class="mb-3">Pet Grooming</h3>
+                        <p>With proper pet grooming, you will get rid of shedding, fleas, ticks, and various health conditions.</</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
+                        <h4 class="mb-3">Pet Deworming</h4>
+                        <p>Deworming is an important preventative care regime for reducing parasites (internal and external) and improving your pet's health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
     <?php include 'pages/landing/footer.php';?>
 
     <!-- Back to Top -->

@@ -53,6 +53,7 @@ CREATE TABLE `reservations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) DEFAULT NULL,
   `schedule_date` varchar(255) DEFAULT NULL,
+  `schedule_time` varchar(255) DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
   `payment_method` varchar(100) DEFAULT NULL,
   `service_type` varchar(255) DEFAULT NULL,

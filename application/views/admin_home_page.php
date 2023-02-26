@@ -96,7 +96,7 @@
                           <b>Contact #:</b> <?php echo $reservation->client_contact_number;?><br/>
                           <b>Email:</b> <?php echo $reservation->client_email;?><br/>
                         </td>
-												<td><?php echo $reservation->schedule_date;?></td>
+												<td><?php echo $reservation->schedule_date . ' ' . $reservation->schedule_time; ?></td>
 												<td><?php echo $reservation->service_type;?></td>
 												<td><?php echo $reservation->address;?></td>
                         <td><?php echo $reservation->status;?></td>

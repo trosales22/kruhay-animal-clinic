@@ -39,6 +39,12 @@
                 <h4 class="text-secondary mb-3">About Us</h4>
                 <h5 class="text-muted mb-3">Kruhay Animal Clinic Background</h5>
                 <p class="mb-4">
+                The clinic was name after a Kinaray-a word "Kruhay" means "Long Live!” a language native in Antique. 
+                The owner, Dr. Petuco is a proud Antiqueño. Dr. Petuco worked at Doctor Binglo’s Pet Station in Cebu City. 
+                He then moved to Manila for Animal Station in White Plains Quezon City and worked for nine years in 
+                Fil-Chinese Animal Clinic in Ortigas Extension before starting his own Animal Clinic, which is the Kruhay Animal Clinic. 
+                The clinic was slowly recognized for having a good customer service, experienced and passionate doctor 
+                towards his patients (dogs and cats). Kruhay Animal Clinic has now hundreds of regular customers/client in Parañaque and nearby cities. 
                 At first, Dr. Petuco run the clinic by himself before making a team made up of Antiqueños. 
                 Three assistants, Carl Jay Onido, Christian Sumande, and Ernesto Beloya. Jestoni Beloya is the groomer of the animal clinic.
                 </p>
@@ -46,13 +52,13 @@
             <div class="col-lg-5">
                 <div class="row px-3">
                     <div class="col-12 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-1.jpeg">
                     </div>
                     <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-2.jpeg">
                     </div>
                     <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-3.jpeg">
                     </div>
                 </div><br/>
             </div>
@@ -66,7 +72,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/feature.jpg" alt="">
+                    <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/feature.jpeg">
                 </div>
                 <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                     <h4 class="text-secondary mb-3">Why Choose Us?</h4>
@@ -102,6 +108,85 @@
         </div>
     </div>
     <!-- Features End -->
+
+    <!-- Team Start -->
+    <div class="container mt-5 pt-5 pb-3">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-secondary mb-3">Team Member</h4>
+            <h1 class="display-4 m-0">Meet Our <span class="text-primary">Team Member</span></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="<?php echo base_url(); ?>static/landing_page/img/team-1.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Mollie Ross</h5>
+                            <i>Founder & CEO</i>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="<?php echo base_url(); ?>static/landing_page/img/team-2.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Jennifer Page</h5>
+                            <i>Chef Executive</i>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="<?php echo base_url(); ?>static/landing_page/img/team-3.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Kate Glover</h5>
+                            <i>Doctor</i>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="<?php echo base_url(); ?>static/landing_page/img/team-4.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Lilly Fry</h5>
+                            <i>Trainer</i>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
 
     <?php include 'pages/landing/footer.php';?>
 

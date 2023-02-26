@@ -37,7 +37,7 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="<?php echo base_url(); ?>static/landing_page/img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="<?php echo base_url(); ?>static/landing_page/img/carousel-1.jpeg">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="<?php echo base_url(); ?>static/landing_page/img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="<?php echo base_url(); ?>static/landing_page/img/carousel-2.jpeg">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
@@ -91,13 +91,13 @@
             <div class="col-lg-5">
                 <div class="row px-3">
                     <div class="col-12 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-1.jpeg">
                     </div>
                     <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-2.jpeg">
                     </div>
                     <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-3.jpeg">
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5">
-                <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/feature.jpg" alt="">
+                <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/feature.jpeg">
             </div>
             <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                 <h4 class="text-secondary mb-3">Why Choose Us?</h4>

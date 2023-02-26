@@ -1,3 +1,6 @@
+<?php
+	$sessionData = $this->session->userdata('client_session');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,9 +62,19 @@
                             <textarea class="form-control p-4" rows="6" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message" style="resize: none;" spellcheck="false"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
-                        <div>
-                            <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Submit</button>
-                        </div>
+                        <?php
+                            if($sessionData){
+                            ?>
+                            <div>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Submit</button>
+                            </div>
+                            <?php }else{?>
+                            <div class="alert alert-danger">
+                                <span class="icon text-red-50" style="margin-right: auto;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span> <b>Login to proceed.</b>
+                            </div>
+                        <?php }?>
                     </form>
                 </div>
             </div>

@@ -30,25 +30,8 @@
     <div class="row">
         <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
             <p class="m-0 text-white">
-                &copy; <a class="text-white font-weight-bold" href="<?php echo base_url(); ?>">Kruhay Animal Clinic</a>. All Rights Reserved. Designed by
-                <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                &copy; <a class="text-white font-weight-bold" href="<?php echo base_url(); ?>">Kruhay Animal Clinic</a>. All Rights Reserved. 2023
             </p>
-        </div>
-        <div class="col-md-6 text-center text-md-right">
-            <ul class="nav d-inline-flex">
-                <li class="nav-item">
-                    <a class="nav-link text-white py-0" href="#">Privacy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white py-0" href="#">Terms</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white py-0" href="#">FAQs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white py-0" href="#">Help</a>
-                </li>
-            </ul>
         </div>
     </div>
 </div>
