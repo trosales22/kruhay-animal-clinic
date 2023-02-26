@@ -150,7 +150,7 @@ function modifyProduct(){
 					cache: false,
 					async: false,
 					success: function(data) {
-						var obj = JSON.parse(data);
+						var obj = data;
 							
 						if(obj.flag === 0){
 							Swal.fire(
