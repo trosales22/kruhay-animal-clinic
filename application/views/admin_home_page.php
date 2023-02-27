@@ -315,7 +315,7 @@
 	<script src="https://parsleyjs.org/dist/parsley.min.js"></script>
 	<script src="<?php echo base_url(); ?>static/js/libraries/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-	<script src="<?php echo base_url(); ?>static/js/home.js"></script>
+	<script src="<?php echo base_url(); ?>static/js/admin_home.js"></script>
 </body>
 
 </html>
