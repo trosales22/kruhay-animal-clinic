@@ -5,10 +5,7 @@
             <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-secondary">Kruhay</span> <span class="text-primary">Animal</span> <span class="text-secondary">Clinic</span></h1>
             <p class="m-0">
                 The clinic was name after a Kinaray-a word "Kruhay" means "Long Live!” a language native in Antique. The owner, Dr. Petuco is a proud Antiqueño.
-                Dr. Petuco worked at Doctor Binglo’s Pet Station in Cebu City. He then moved to Manila for Animal Station in White Plains Quezon City 
-                and worked for nine years in Fil-Chinese Animal Clinic in Ortigas Extension before starting his own Animal Clinic, which is the Kruhay Animal Clinic.
-                The clinic was slowly recognized for having a good customer service, experienced and passionate doctor towards his patients (dogs and cats). 
-                Kruhay Animal Clinic has now hundreds of regular customers/client in Parañaque and nearby cities.
+                Dr. Petuco worked at Doctor Binglo’s Pet Station in Cebu City.
             </p>
         </div>
         <div class="col-lg-8 col-md-12">
