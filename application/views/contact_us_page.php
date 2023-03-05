@@ -47,7 +47,7 @@
                     <div id="success"></div>
                     <form id="frmSubmitFeedback" method="POST" action="<?php echo base_url(). 'api/feedback/submit_feedback'; ?>">
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" spellcheck="false" />
+                            <input type="text" class="form-control p-4" name="name" placeholder="Full Name" required="required" data-validation-required-message="Please enter your full name" spellcheck="false" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
@@ -55,7 +55,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control p-4" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" spellcheck="false" />
+                            <input type="email" class="form-control p-4" name="email" placeholder="Email address" required="required" data-validation-required-message="Please enter your email" spellcheck="false" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
@@ -63,7 +63,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control p-4" rows="6" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message" style="resize: none;" spellcheck="false"></textarea>
+                            <textarea class="form-control p-4" rows="6" name="message" placeholder="Message/Concern" required="required" data-validation-required-message="Please enter your message or concern" style="resize: none;" spellcheck="false"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <?php
