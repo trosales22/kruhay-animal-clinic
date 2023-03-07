@@ -65,7 +65,7 @@
 
                             <div class="form-group">
                                  <div class="time" id="time" data-target-input="nearest">
-                                     <input type="text" name="scheduled_time" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Approximate Scheduled Time" data-target="#time" data-toggle="datetimepicker"/>
+                                     <input type="text" name="schedule_time" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Approximate Scheduled Time" data-target="#time" data-toggle="datetimepicker"/>
                                 </div>
                             </div>
 
