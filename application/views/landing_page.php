@@ -91,10 +91,13 @@
             <div class="col-lg-5">
                 <div class="row px-3">
                     <div class="col-12 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-4.jpeg">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-1.jpeg">
                     </div>
-                    <div class="col-12 p-0">
-                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-5.jpeg">
+                    <div class="col-6 p-0">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-2.jpeg">
+                    </div>
+                    <div class="col-6 p-0">
+                        <img class="img-fluid w-100" src="<?php echo base_url(); ?>static/landing_page/img/about-3.jpeg">
                     </div>
                 </div>
             </div>
