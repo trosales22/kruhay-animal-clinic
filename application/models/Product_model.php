@@ -10,7 +10,7 @@ class Product_model extends CI_Model
 		$timezone = new DateTimeZone('Asia/Manila');
 		$datetime->setTimezone($timezone);
 
-		$data['created_at'] = $datetime;
+		$data['created_at'] = $datetime->format('Y-m-d H:i:s');
 		$this->db->insert(Tables::$PRODUCTS, $data);
 	}
 

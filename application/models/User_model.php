@@ -101,7 +101,7 @@ class User_model extends CI_Model
 			'role_type' => 'CLIENT',
 			'address' => $data['address'],
 			'is_active' => true,
-			'created_at' => $datetime
+			'created_at' => $datetime->format('Y-m-d H:i:s')
 		));
 	}
 }

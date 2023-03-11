@@ -11,7 +11,7 @@ class Reservation_model extends CI_Model
 			$timezone = new DateTimeZone('Asia/Manila');
 			$datetime->setTimezone($timezone);
 
-			$params['created_at'] = $datetime;
+			$params['created_at'] = $datetime->format('Y-m-d H:i:s');
 
 			$this->db->insert(Tables::$RESERVATIONS, $params);
 			return $this->db->insert_id();
