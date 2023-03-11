@@ -6,6 +6,11 @@ class Feedback_model extends CI_Model
 {
 	public function add(array $data)
 	{
+		$datetime = new DateTime();
+		$timezone = new DateTimeZone('Asia/Manila');
+		$datetime->setTimezone($timezone);
+
+		$data['created_at'] = $datetime;
 		$this->db->insert(Tables::$FEEDBACKS, $data);
 	}
 

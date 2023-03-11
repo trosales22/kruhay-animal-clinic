@@ -7,6 +7,12 @@ class Reservation_model extends CI_Model
 	public function submitReservation(array $params)
 	{
 		try {
+			$datetime = new DateTime();
+			$timezone = new DateTimeZone('Asia/Manila');
+			$datetime->setTimezone($timezone);
+
+			$params['created_at'] = $datetime;
+
 			$this->db->insert(Tables::$RESERVATIONS, $params);
 			return $this->db->insert_id();
 			//$this->_sendSuccessfulReservationNotifToClientEmail($booking_params, $email_params);

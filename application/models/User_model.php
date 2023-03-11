@@ -88,6 +88,10 @@ class User_model extends CI_Model
 
 	public function insertClient(array $data)
 	{
+		$datetime = new DateTime();
+		$timezone = new DateTimeZone('Asia/Manila');
+		$datetime->setTimezone($timezone);
+
 		$this->db->insert(Tables::$USERS, array(
 			'first_name' => $data['first_name'],
 			'last_name' => $data['last_name'],
@@ -96,7 +100,8 @@ class User_model extends CI_Model
 			'password' => password_hash($data['password'], PASSWORD_BCRYPT),
 			'role_type' => 'CLIENT',
 			'address' => $data['address'],
-			'is_active' => true
+			'is_active' => true,
+			'created_at' => $datetime
 		));
 	}
 }

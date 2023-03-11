@@ -27,8 +27,8 @@ CREATE TABLE `products` (
   `file_name` varchar(500) DEFAULT NULL,
   `amount` varchar(255) DEFAULT NULL,
   `quantity` varchar(100) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_created_at_updated_at_index` (`created_at`,`updated_at`) USING BTREE,
   KEY `products_name_index` (`name`) USING BTREE
@@ -41,8 +41,8 @@ CREATE TABLE `services` (
   `short_desc` text,
   `long_desc` text,
   `amount` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `services_created_at_updated_at_index` (`created_at`,`updated_at`) USING BTREE,
   KEY `services_name_index` (`name`) USING BTREE
@@ -60,8 +60,8 @@ CREATE TABLE `reservations` (
   `address` text,
   `payment_id` varchar(255) DEFAULT NULL,
   `amount` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `reservations_user_id_index` (`user_id`) USING BTREE,
   KEY `reservations_status_index` (`status`) USING BTREE,
@@ -81,7 +81,7 @@ CREATE TABLE `users` (
   `is_active` varchar(50) DEFAULT NULL,
   `role_type` varchar(100) DEFAULT NULL,
   `address` text,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT NULL
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`),
@@ -98,7 +98,7 @@ CREATE TABLE `feedbacks` (
   `email` VARCHAR(255) NOT NULL, 
   `subject` VARCHAR(255) NOT NULL, 
   `message` LONGTEXT NOT NULL, 
-  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+  `created_at` timestamp NULL DEFAULT NULL
   PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 INSERT INTO `users` (`user_id`, `username`, `first_name`, `last_name`, `email`, `contact_number`, `password`, `is_active`, `role_type`, `address`, `created_at`) VALUES
