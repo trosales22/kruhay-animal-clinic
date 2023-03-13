@@ -81,7 +81,7 @@ CREATE TABLE `users` (
   `is_active` varchar(50) DEFAULT NULL,
   `role_type` varchar(100) DEFAULT NULL,
   `address` text,
-  `created_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`),
@@ -98,7 +98,7 @@ CREATE TABLE `feedbacks` (
   `email` VARCHAR(255) NOT NULL, 
   `subject` VARCHAR(255) NOT NULL, 
   `message` LONGTEXT NOT NULL, 
-  `created_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 INSERT INTO `users` (`user_id`, `username`, `first_name`, `last_name`, `email`, `contact_number`, `password`, `is_active`, `role_type`, `address`, `created_at`) VALUES
