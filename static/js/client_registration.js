@@ -39,7 +39,7 @@ function registerClient(){
 					cache: false,
 					async: false,
 					success: function(data) {
-						var obj = data;
+						var obj = JSON.parse(data);
 							
 						if(obj.flag === 0){
 							Swal.fire(

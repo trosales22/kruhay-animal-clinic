@@ -17,7 +17,7 @@ class Client_registration extends CI_Controller {
 
 	public function store(){
 		try{
-			$success  = 0;
+			$is_success = 0;
 			$msg = array();
 			$session_data = $this->session->userdata('logged_in');
 
@@ -45,21 +45,25 @@ class Client_registration extends CI_Controller {
 			if(EMPTY($payload['password']))
 				throw new Exception("Password is required.");
 
+			if(!EMPTY($this->user_model->getClientInfo($payload['email']))){
+				throw new Exception("Email address already exists.");
+			}
+
 			$this->user_model->insertClient($payload);
-			$success  = 1;
+			$is_success = 1;
 		}catch (Exception $e){
 			$msg = $e->getMessage();      
 		}
 
-		if($success == 1){
+		if($is_success == 1){
 			$response = [
 				'msg' => 'Client was successfully registered!',
-				'flag' => $success
+				'flag' => $is_success
 			];
 		}else{
 			$response = [
 				'msg' => $msg,
-				'flag' => $success
+				'flag' => $is_success
 			];
 		}
 

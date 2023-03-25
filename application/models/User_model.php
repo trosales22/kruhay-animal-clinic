@@ -57,7 +57,7 @@ class User_model extends CI_Model
 
 	public function getClientInfo($email)
 	{
-		$params = array($email, true);
+		$params = array($email, true, 'CLIENT');
 		$query = "
 			SELECT 
 				A.user_id, A.username, A.first_name, A.last_name, 
@@ -65,7 +65,7 @@ class User_model extends CI_Model
 			FROM 
 				" . Tables::$USERS . " A
 			WHERE 
-				A.email = ? AND A.is_active = ?";
+				A.email = ? AND A.is_active = ? AND A.role_type = ?";
 
 		$stmt = $this->db->query($query, $params);
 		return $stmt->result();
