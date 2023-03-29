@@ -31,8 +31,8 @@
 	<script src="<?php echo base_url(); ?>static/js/libraries/alpine/alpine.js" defer></script>
 </head>
 
-<body class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-<div class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+<body class="min-h-screen bg-gray-100 text-gray-900 justify-center">
+<div class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1" style="margin: auto;">
 	<div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
 		<div>
 			<img src="<?php echo base_url(); ?>static/images/logo.png" class="w-32 mx-auto" style="border-radius: 50%;"/>
