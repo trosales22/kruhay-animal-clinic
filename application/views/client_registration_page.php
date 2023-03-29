@@ -27,6 +27,7 @@
 		}
 	</style>
 	<link href="<?php echo base_url(); ?>static/css/sweetalert2.min.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>static/css/parsley.css" rel="stylesheet">
 	<script src="<?php echo base_url(); ?>static/js/libraries/alpine/alpine.js" defer></script>
 </head>
 
@@ -42,13 +43,13 @@
 			</h1>
 			<div class="w-full flex-1 mt-8">
 				<div class="mx-auto max-w-xs">
-					<form id="frmRegisterClient" method="POST" action="<?php echo base_url(). 'client_registration/store'; ?>">
-						<input name="email" type="email" placeholder="Email" required class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"/>
-						<input name="first_name" type="text" placeholder="First name" required class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
-						<input name="last_name" type="text" placeholder="Last name" required class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
-						<input name="password" type="password" placeholder="Password" required class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
-						<input name="contact_number" type="text" placeholder="Contact Number" required class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
-						<br/><br/>Address:
+					<form id="frmRegisterClient" data-parsley-validate="" method="POST" action="<?php echo base_url(). 'client_registration/store'; ?>">
+						<input name="email" type="email" placeholder="Email" required data-parsley-error-message="Please enter your email address" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"/>
+						<input name="first_name" type="text" placeholder="First name" required data-parsley-error-message="Please enter your first name" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
+						<input name="last_name" type="text" placeholder="Last name" required data-parsley-error-message="Please enter your last name" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
+						<input name="password" type="password" placeholder="Password" required data-parsley-error-message="Please enter your password" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
+						<input name="contact_number" type="text" maxlength="12" placeholder="Contact Number" required data-parsley-required-message="Please enter your contact number" data-parsley-pattern-message="Please enter valid phone number" data-parsley-pattern="^(09|639)\d{9}$" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"/>
+						<br/>Address:
 						<textarea name="address" rows="4" style="resize: none;" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
 						</textarea>
 						<button type="submit" class="mt-5 tracking-wide font-semibold bg-green-500 text-gray-100 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
@@ -88,6 +89,7 @@
 	</div>
 </div>
 <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
+<script src="https://parsleyjs.org/dist/parsley.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="<?php echo base_url(); ?>static/js/client_registration.js"></script>
 </body>

@@ -77,4 +77,8 @@ function registerClient(){
 	});
 }
 
+$('#frmRegisterClient').parsley().on('field:validated', function() {
+	$('.parsley-error').length === 0;
+});
+
 registerClient();
