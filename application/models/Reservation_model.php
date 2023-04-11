@@ -56,6 +56,23 @@ class Reservation_model extends CI_Model
 		return $stmt->result();
 	}
 
+	public function getAllByUserId($userId)
+	{
+		$params = array($userId);
+		$query = "
+			SELECT 
+				id, user_id, schedule_date, schedule_time,
+				payment_method, service_type, address, status,
+				DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
+			FROM 
+				" . Tables::$RESERVATIONS . " 
+			WHERE 
+				user_id = ?";
+
+		$stmt = $this->db->query($query, $params);
+		return $stmt->result();
+	}
+
 	private function _sendSuccessfulReservationNotifToClientEmail(array $booking_params, array $email_params)
 	{
 		try {

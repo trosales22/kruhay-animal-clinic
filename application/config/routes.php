@@ -61,5 +61,6 @@ $route['admin_home_page'] = 'admin_home';
 $route['bookings_page'] = 'bookings';
 $route['client_registration_page'] = 'client_registration';
 $route['client_login_page'] = 'client_login';
+$route['reservation_list_page'] = 'reservation';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
