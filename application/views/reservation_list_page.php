@@ -1,5 +1,9 @@
 <?php
 	$sessionData = $this->session->userdata('client_session');
+
+    if (!$sessionData) {
+		redirect(base_url('client_login'));
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
