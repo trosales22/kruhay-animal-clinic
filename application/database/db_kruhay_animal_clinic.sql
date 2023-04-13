@@ -52,6 +52,7 @@ DROP TABLE IF EXISTS `reservations`;
 CREATE TABLE `reservations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) DEFAULT NULL,
+  `pet_name` varchar(255) DEFAULT NULL,
   `schedule_date` varchar(255) DEFAULT NULL,
   `schedule_time` varchar(255) DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
@@ -64,6 +65,7 @@ CREATE TABLE `reservations` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `reservations_user_id_index` (`user_id`) USING BTREE,
+  KEY `reservations_pet_name_index` (`pet_name`) USING BTREE,
   KEY `reservations_status_index` (`status`) USING BTREE,
   KEY `reservations_created_at_updated_at_index` (`created_at`,`updated_at`) USING BTREE,
   KEY `reservations_service_type_index` (`service_type`) USING BTREE

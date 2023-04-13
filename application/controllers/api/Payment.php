@@ -50,11 +50,13 @@ class Payment extends REST_Controller
 			$payment_intent_id = !empty($jsonObj->payment_intent_id) ? $jsonObj->payment_intent_id : '';
 			$name = !empty($jsonObj->name) ? $jsonObj->name : '';
 			$email = !empty($jsonObj->email) ? $jsonObj->email : '';
+			$pet_name = !empty($jsonObj->pet_name) ? $jsonObj->pet_name : '';
 			$schedule_date = !empty($jsonObj->schedule_date) ? $jsonObj->schedule_date : '';
 			$schedule_time = !empty($jsonObj->schedule_time) ? $jsonObj->schedule_time : '';
 			$address = !empty($jsonObj->address) ? $jsonObj->address : '';
 			$service_type = !empty($jsonObj->service_type) ? $jsonObj->service_type : '';
-
+			
+			$_SESSION['pet_name'] = $pet_name;
 			$_SESSION['schedule_date'] = $schedule_date;
 			$_SESSION['schedule_time'] = $schedule_time;
 			$_SESSION['address'] = $address;
@@ -116,6 +118,7 @@ class Payment extends REST_Controller
 
 				$payment_id = $this->reservation_model->submitReservation(array(
 					'user_id' => $user_id,
+					'pet_name' => $_SESSION['pet_name'],
 					'schedule_date' => $_SESSION['schedule_date'],
 					'schedule_time' => $_SESSION['schedule_time'],
 					'payment_method' => 'E-Wallet',
@@ -126,6 +129,7 @@ class Payment extends REST_Controller
 					'status' => 'PAID'
 				));
 
+				unset($_SESSION['pet_name']);
 				unset($_SESSION['schedule_date']);
 				unset($_SESSION['schedule_time']);
 				unset($_SESSION['service_type']);
@@ -135,6 +139,7 @@ class Payment extends REST_Controller
 					'payment_id' => base64_encode($payment_id)
 				]);
 			} else {
+				unset($_SESSION['pet_name']);
 				unset($_SESSION['schedule_date']);
 				unset($_SESSION['schedule_time']);
 				unset($_SESSION['service_type']);

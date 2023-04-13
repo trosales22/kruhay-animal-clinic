@@ -82,6 +82,7 @@
                       <th>Client Details</th>
                       <th>Schedule Date & Time</th>
                       <th>Service Type</th>
+                      <th>Pet Name</th>
                       <th>Address (if Home Service)</th>
                       <th>Status</th>
                       <th>Date Created</th>
@@ -98,6 +99,7 @@
                         </td>
 												<td><?php echo $reservation->schedule_date . ' (' . $reservation->schedule_time . ')'; ?></td>
 												<td><?php echo $reservation->service_type;?></td>
+                        <td><?php echo $reservation->pet_name;?></td>
 												<td><?php echo $reservation->address;?></td>
                         <td><?php echo $reservation->status;?></td>
                         <td><?php echo $reservation->created_at;?></td>
@@ -110,6 +112,7 @@
                       <th>Client Details</th>
                       <th>Schedule Date & Time</th>
                       <th>Service Type</th>
+                      <th>Pet Name</th>
                       <th>Address (if Home Service)</th>
                       <th>Status</th>
                       <th>Date Created</th>

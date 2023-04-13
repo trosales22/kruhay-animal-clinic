@@ -81,6 +81,7 @@ async function handleSubmit(e) {
                     payment_intent_id: payment_intent_id, 
                     name: name, 
                     email: email,
+                    pet_name: $('input[name=pet_name').val(),
                     schedule_date: $('input[name=schedule_date').val(),
                     schedule_time: $('input[name=schedule_time').val(),
                     address: $('input[name=address').val(),

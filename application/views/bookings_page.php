@@ -58,6 +58,10 @@
                             <input type="text" id="txtReservationEmail" value="<?php echo $email; ?>" style="display: none;"/>
                         
                             <div class="form-group">
+                                <input type="text" name="pet_name" required class="form-control border-0 p-4" placeholder="Pet Name" />
+                            </div>
+
+                            <div class="form-group">
                                 <div class="date" id="date" data-target-input="nearest">
                                     <input type="text" name="schedule_date" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" data-target="#date" data-toggle="datetimepicker"/>
                                 </div>
