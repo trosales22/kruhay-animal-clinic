@@ -28,7 +28,7 @@ const clientSecretParam = new URLSearchParams(window.location.search).get(
 let payment_intent_id;
 
 async function initialize(amount) {
-    const { id, clientSecret } = await fetch("api/productpayment/process", {
+    const { id, clientSecret } = await fetch("api/product_payment/process", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
@@ -75,7 +75,7 @@ async function handleSubmit(e) {
             let name = $('input[name=checkout_fullname]').val();
             let email = $('input[name=checkout_email]').val();
 
-            const { id, customer_id } = await fetch("api/productpayment/process", {
+            const { id, customer_id } = await fetch("api/product_payment/process", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
@@ -135,7 +135,7 @@ async function checkStatus() {
         switch (paymentIntent.status) { 
             case "succeeded":
                 // Post the transaction info to the server-side script and redirect to the payment status page
-                fetch("api/productpayment/process", {
+                fetch("api/product_payment/process", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ 

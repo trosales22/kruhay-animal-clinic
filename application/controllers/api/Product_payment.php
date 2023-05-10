@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/stripe-php-7.7.0/init.php';
 
-class ProductPayment extends REST_Controller
+class Product_payment extends REST_Controller
 {
 	public function __construct()
 	{

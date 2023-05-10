@@ -11,7 +11,7 @@ class Hostinger_email extends REST_Controller {
 		try{
 			$success = 0;
 			$from = "support@kruhayanimalclinic.com";
-			$to = "tristanrosales0@gmail.com";
+			$to = "to@email.com";
 			$subject = "Checking PHP mail";
 			$message = "PHP mail works just fine";
 			$headers = "From:" . $from;
