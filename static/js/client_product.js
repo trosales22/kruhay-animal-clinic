@@ -50,10 +50,7 @@ async function initialize(amount) {
     elements = stripe.elements({ clientSecret, appearance });
 	
     const paymentElement = elements.create("payment");
-    paymentElement.mount("#paymentElement");
-
-    document.querySelector("#btnProceedBuyProduct").style.display = "block";
-	
+    paymentElement.mount("#paymentElement");	
     payment_intent_id = id;
 }
 
@@ -102,6 +99,7 @@ async function handleSubmit(e) {
             // your `return_url`. For some payment methods like iDEAL, your customer will
             // be redirected to an intermediate site first to authorize the payment, then
             // redirected to the `return_url`.
+
             if (error.type === "card_error" || error.type === "validation_error") {
                 showMessage(error.message);
             } else {
@@ -197,8 +195,10 @@ function showMessage(messageText) {
 function setProcessing(isProcessing) {
     if (isProcessing) {
         document.querySelector("#frmProcess").style.display = "block";
+        document.querySelector("#btnProceedBuyProduct").style.display = "none";
     } else {
         document.querySelector("#frmProcess").style.display = "none";
+        document.querySelector("#btnProceedBuyProduct").style.display = "block";
     }
 }
 
@@ -231,15 +231,11 @@ $( document ).ready(function() {
             }
         });
     });
-    
+
     // Check the PaymentIntent creation status
 	checkStatus();
 
 	// Attach an event handler to payment form
 	frmBuyProduct.addEventListener("submit", handleSubmit);
-});
-
-$('#btnCancelBuyProduct').click(function(){
-    document.querySelector("#btnProceedBuyProduct").style.display = "none";
 });
 
