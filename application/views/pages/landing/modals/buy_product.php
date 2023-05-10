@@ -47,7 +47,7 @@
                         </div><br/>
                         
                         <div>
-                            <button id="submitBtn" class="btn btn-success btn-block border-0 py-3">Proceed</button>
+                            <button id="btnProceedBuyProduct" class="btn btn-success btn-block border-0 py-3" style="display: none;">Proceed</button>
                         </div>
                         <?php }else{?>
                         <div class="alert alert-danger">
@@ -59,7 +59,7 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" id="btnCancelBuyProduct" type="button" data-dismiss="modal">Cancel</button>
                 </div>
             </form>
 

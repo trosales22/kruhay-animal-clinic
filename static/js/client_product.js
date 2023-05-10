@@ -51,6 +51,8 @@ async function initialize(amount) {
 	
     const paymentElement = elements.create("payment");
     paymentElement.mount("#paymentElement");
+
+    document.querySelector("#btnProceedBuyProduct").style.display = "block";
 	
     payment_intent_id = id;
 }
@@ -235,5 +237,9 @@ $( document ).ready(function() {
 
 	// Attach an event handler to payment form
 	frmBuyProduct.addEventListener("submit", handleSubmit);
+});
+
+$('#btnCancelBuyProduct').click(function(){
+    document.querySelector("#btnProceedBuyProduct").style.display = "none";
 });
 
