@@ -103,6 +103,25 @@ CREATE TABLE `feedbacks` (
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+DROP TABLE IF EXISTS `product_purchases`;
+CREATE TABLE `product_purchases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL,
+  `product_id` varchar(255) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `payment_method` varchar(100) DEFAULT NULL,
+  `address` text,
+  `payment_id` varchar(255) DEFAULT NULL,
+  `amount` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product_purchases_user_id_index` (`user_id`) USING BTREE,
+  KEY `product_purchases_product_id_index` (`user_id`) USING BTREE,
+  KEY `product_purchases_status_index` (`status`) USING BTREE,
+  KEY `product_purchases_timestamp_index` (`created_at`,`updated_at`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 INSERT INTO `users` (`user_id`, `username`, `first_name`, `last_name`, `email`, `contact_number`, `password`, `is_active`, `role_type`, `address`, `created_at`) VALUES
 (1, 'admin', 'Admin', 'Admin', 'admin.kruhayclinic@gmail.com', '09999999999', '$2y$10$vxxd8xOgEyqQUoKw0BtB1eJ461VqWVxn1q4daZiFhmmS/JZrPi.7m', '1', 'SUPER_ADMIN', NULL, '2019-07-20 10:38:15');
 

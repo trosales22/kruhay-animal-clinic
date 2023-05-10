@@ -61,7 +61,8 @@ class Product_model extends CI_Model
 
 		$query = "
 			SELECT 
-				id, name, short_desc, long_desc, amount, quantity 
+				id, name, short_desc, long_desc, amount, quantity,
+				IF( ISNULL(file_name) OR file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', file_name) ) as file_name
 			FROM 
 				" . Tables::$PRODUCTS . " 
 			WHERE 
@@ -90,4 +91,20 @@ class Product_model extends CI_Model
 		return $stmt->result();
 	}
 
+	public function checkout(array $params)
+	{
+		try {
+			$datetime = new DateTime();
+			$timezone = new DateTimeZone('Asia/Manila');
+			$datetime->setTimezone($timezone);
+
+			$params['created_at'] = $datetime->format('Y-m-d H:i:s');
+
+			$this->db->insert(Tables::$PRODUCT_PURCHASES, $params);
+			return $this->db->insert_id();
+		} catch (PDOException $e) {
+			$msg = $e->getMessage();
+			$this->db->trans_rollback();
+		}
+	}
 }

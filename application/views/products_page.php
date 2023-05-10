@@ -49,13 +49,9 @@
                         <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                             <?php 
                                 if(empty($product->file_name)){
-                                echo '<div class="alert alert-danger">
-                                        <span class="icon text-red-50" style="margin-right: auto;">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </span> <b>NO IMAGE AVAILABLE!</b>
-                                        </div>';
+                                    echo "<img src='" . base_url() . "static/images/logo.png' style='width: 150px; height: 150px; margin-left: auto; margin-right: auto;' />";
                                 }else{
-                                echo "<img src='" . $product->file_name . "' style='width: 150px; height: 150px; margin-left: auto; margin-right: auto;' />";
+                                    echo "<img src='" . $product->file_name . "' style='width: 150px; height: 150px; margin-left: auto; margin-right: auto;' />";
                                 }
                             ?>
                             <h3 class="mb-3"><?php echo $product->name;?></h3>
@@ -64,6 +60,13 @@
                                 <b>Amount:</b> ₱<?php echo $product->amount;?><br/>
                                 <b>Qty:</b> <?php echo $product->quantity;?>
                             </p>
+
+                            <a href="#" data-toggle="modal" data-id="<?php echo $product->id;?>" data-target="#buyProductModal" class="btnBuyProduct btn btn-success btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                                <span class="text">Buy</span>
+                            </a>
                         </div>
                     </div>
                 <?php }}?>
@@ -72,6 +75,7 @@
     </div>
     <!-- Products End -->
 
+    <?php include 'pages/landing/modals/buy_product.php';?>
     <?php include 'pages/landing/footer.php';?>
 
     <!-- Back to Top -->
@@ -90,7 +94,9 @@
     <script src="<?php echo base_url(); ?>static/landing_page/js/main.js"></script>
     <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- Stripe JS library -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="<?php echo base_url(); ?>static/js/client_product.js" STRIPE_PUBLISHABLE_KEY="<?php echo $this->config->item('stripe_key'); ?>" defer></script>
     <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/client_registration.js"></script>
 </body>
 </html>

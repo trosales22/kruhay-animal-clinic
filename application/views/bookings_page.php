@@ -215,9 +215,8 @@
     <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/client_registration.js"></script>
     <!-- Stripe JS library -->
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="<?php echo base_url(); ?>static/js/checkout.js" STRIPE_PUBLISHABLE_KEY="<?php echo $this->config->item('stripe_key'); ?>" defer></script>
+    <script src="<?php echo base_url(); ?>static/js/reservation_checkout.js" STRIPE_PUBLISHABLE_KEY="<?php echo $this->config->item('stripe_key'); ?>" defer></script>
 </body>
 </html>
