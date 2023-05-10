@@ -202,36 +202,36 @@ function setProcessing(isProcessing) {
     }
 }
 
-$('.btnBuyProduct').click(function(){
-	var checkoutProductId = $(this).data("id");
-	var productDetailsUrl = base_url() + 'api/products/get_product_by_id?product_id=' + checkoutProductId;
-	$.getJSON(productDetailsUrl, function(response) {
-		$('input[name=checkout_product_id]').val(response.id);
-		$('input[name=checkout_product_amount]').val(response.amount);
-
-        if(response.file_name === null){
-            $('.checkout_product_image').attr('src', base_url() +  'static/images/logo.png');
-        }else{
-            $('.checkout_product_image').attr('src', response.file_name);
-        }
-  
-		$(".checkout_product_name").text(response.name);
-		$(".checkout_product_short_desc").text(response.short_desc);
-		$(".checkout_product_long_desc").text(response.long_desc);
-		$(".checkout_product_amount").text(response.amount);
-		$(".checkout_product_quantity").text(response.quantity);
-
-		// Check whether the payment_intent_client_secret is already exist in the URL
-		setProcessing(true);
-		if(!clientSecretParam){
-			setProcessing(false);
-			// Create an instance of the Elements UI library and attach the client secret
-			initialize($('input[name=checkout_product_amount]').val());
-		}
-	});
-});
-
 $( document ).ready(function() {
+    $('.btnBuyProduct').click(function(){
+        var checkoutProductId = $(this).data("id");
+        var productDetailsUrl = base_url() + 'api/products/get_product_by_id?product_id=' + checkoutProductId;
+        $.getJSON(productDetailsUrl, function(response) {
+            $('input[name=checkout_product_id]').val(response.id);
+            $('input[name=checkout_product_amount]').val(response.amount);
+    
+            if(response.file_name === null){
+                $('.checkout_product_image').attr('src', base_url() +  'static/images/logo.png');
+            }else{
+                $('.checkout_product_image').attr('src', response.file_name);
+            }
+      
+            $(".checkout_product_name").text(response.name);
+            $(".checkout_product_short_desc").text(response.short_desc);
+            $(".checkout_product_long_desc").text(response.long_desc);
+            $(".checkout_product_amount").text(response.amount);
+            $(".checkout_product_quantity").text(response.quantity);
+    
+            // Check whether the payment_intent_client_secret is already exist in the URL
+            setProcessing(true);
+            if(!clientSecretParam){
+                setProcessing(false);
+                // Create an instance of the Elements UI library and attach the client secret
+                initialize($('input[name=checkout_product_amount]').val());
+            }
+        });
+    });
+    
     // Check the PaymentIntent creation status
 	checkStatus();
 
