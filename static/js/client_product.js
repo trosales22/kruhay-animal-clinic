@@ -221,13 +221,18 @@ $( document ).ready(function() {
             $(".checkout_product_long_desc").text(response.long_desc);
             $(".checkout_product_amount").text(response.amount);
             $(".checkout_product_quantity").text(response.quantity);
-    
-            // Check whether the payment_intent_client_secret is already exist in the URL
-            setProcessing(true);
-            if(!clientSecretParam){
-                setProcessing(false);
-                // Create an instance of the Elements UI library and attach the client secret
-                initialize($('input[name=checkout_product_amount]').val());
+
+            if(response.quantity > 0){
+                // Check whether the payment_intent_client_secret is already exist in the URL
+                setProcessing(true);
+                if(!clientSecretParam){
+                    setProcessing(false);
+                    // Create an instance of the Elements UI library and attach the client secret
+                    initialize($('input[name=checkout_product_amount]').val());
+                }
+            }else{
+                document.querySelector("#frmProcess").style.display = "none";
+                document.querySelector("#btnProceedBuyProduct").style.display = "none";
             }
         });
     });

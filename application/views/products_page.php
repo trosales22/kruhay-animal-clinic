@@ -61,12 +61,24 @@
                                 <b>Qty:</b> <?php echo $product->quantity;?>
                             </p>
 
+                            <?php 
+                                if($product->quantity <= 0){
+                                    echo '
+                                    <div class="alert alert-danger">
+                                        <span class="icon text-red-50" style="margin-right: auto;">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </span> <b>Out of stock</b>
+                                    </div>
+                                    ';
+                                }else{
+                            ?>
                             <a href="#" data-toggle="modal" data-id="<?php echo $product->id;?>" data-target="#buyProductModal" class="btnBuyProduct btn btn-success btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-shopping-cart"></i>
                                 </span>
                                 <span class="text">Buy</span>
                             </a>
+                            <?php }?>
                         </div>
                     </div>
                 <?php }}?>
