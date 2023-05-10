@@ -101,6 +101,11 @@ class Product_model extends CI_Model
 			$params['created_at'] = $datetime->format('Y-m-d H:i:s');
 
 			$this->db->insert(Tables::$PRODUCT_PURCHASES, $params);
+			
+			$this->db->set('quantity', 'quantity-1', FALSE);
+			$this->db->where('id', $params['product_id']);
+			$this->db->update(Tables::$PRODUCTS);
+
 			return $this->db->insert_id();
 		} catch (PDOException $e) {
 			$msg = $e->getMessage();
