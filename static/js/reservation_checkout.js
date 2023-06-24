@@ -158,7 +158,7 @@ async function checkStatus() {
                             confirmButtonText: 'Ok, Got It!'
                         }).then((result) => {
                             if (result.value) {
-                                location.replace(base_url() + 'bookings');
+                                location.replace(base_url() + 'reservation');
                             }
                         });
                     } else {
