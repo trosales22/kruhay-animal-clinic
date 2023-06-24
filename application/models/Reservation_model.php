@@ -14,8 +14,23 @@ class Reservation_model extends CI_Model
 			$params['created_at'] = $datetime->format('Y-m-d H:i:s');
 
 			$this->db->insert(Tables::$RESERVATIONS, $params);
+
+			$booking_params = [
+				'pet_name' => $params['pet_name'],
+				'schedule_date' => $params['schedule_date'],
+				'schedule_time' => $params['schedule_time'],
+				'service_type' => $params['service_type'],
+				'address' => $params['address']
+			];
+
+			$sessionData = $this->session->userdata('client_session');
+
+			$this->sendSuccessfulReservationNotifToClientEmail($booking_params, [
+				'email' => $sessionData['email'],
+				'fullname' => $sessionData['first_name'] . ' ' . $sessionData['last_name']
+			]);
+
 			return $this->db->insert_id();
-			//$this->_sendSuccessfulReservationNotifToClientEmail($booking_params, $email_params);
 		} catch (PDOException $e) {
 			$msg = $e->getMessage();
 			$this->db->trans_rollback();
@@ -73,16 +88,16 @@ class Reservation_model extends CI_Model
 		return $stmt->result();
 	}
 
-	private function _sendSuccessfulReservationNotifToClientEmail(array $booking_params, array $email_params)
+	public function sendSuccessfulReservationNotifToClientEmail(array $booking_params, array $email_params)
 	{
 		try {
 			$success = 0;
 			$from = "support@kruhayanimalclinic.com";
-			$to = $email_params['client_details']->email;
+			$to = $email_params['email'];
 			$message = '';
 			$subject = "Kruhay Animal Clinic | Congratulations for a successful reservation!";
 
-			$message = "Hi " . $email_params['client_details']->fullname . "!\n\n";
+			$message = "Hi " . $email_params['fullname'] . "!\n\n";
 			$message .= "Below are your reservation details:\n\n";
 			$message .= "Pet Name:\n" . $booking_params['pet_name'] . "\n";
 			$message .= "Schedule:\n" . $booking_params['schedule_date'] . " " . $booking_params['schedule_time'] . "\n";
