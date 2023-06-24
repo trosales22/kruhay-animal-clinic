@@ -99,11 +99,11 @@ class Reservation_model extends CI_Model
 
 			$message = "Hi " . $email_params['fullname'] . "!\n\n";
 			$message .= "Below are your reservation details:\n\n";
-			$message .= "Pet Name:\n" . $booking_params['pet_name'] . "\n";
-			$message .= "Schedule:\n" . $booking_params['schedule_date'] . " " . $booking_params['schedule_time'] . "\n";
+			$message .= "Pet Name:" . $booking_params['pet_name'] . "\n";
+			$message .= "Schedule:" . $booking_params['schedule_date'] . " " . $booking_params['schedule_time'] . "\n";
 			$message .= "Service Type: " . $booking_params['service_type'] . "\n";
 			$message .= "Address: " . $booking_params['address'] . "\n";
-			$message .= "Reservation Fee: ₱200.00\n";
+			$message .= "Reservation Fee: ₱200.00\n\n";
 			$message .= "Thank you for supporting Kruhay Animal Clinic.\n";
 
 			$headers = "From:" . $from;
