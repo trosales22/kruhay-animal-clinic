@@ -37,14 +37,19 @@
 			</div>
 
 			<div class="row form-group">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<label for="inputProductAmount">Amount</label>
 					<input type="text" class="form-control" id="inputProductAmount" name="amount" placeholder="Enter amount..">
 				</div>
 
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<label for="inputProductQuantity">Quantity</label>
 					<input type="number" class="form-control" id="inputProductQuantity" name="quantity" placeholder="Enter quantity..">
+				</div>
+
+				<div class="col-sm-4">
+					<label for="inputProductExpirationDate">Expiration Date</label>
+					<input type="date" class="form-control" id="inputProductExpirationDate" name="expiration_date" placeholder="Enter expiration date.." required>
 				</div>
 			</div>
 

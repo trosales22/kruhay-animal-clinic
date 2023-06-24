@@ -29,7 +29,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $sessionFullname; ?></a>
                     <div class="dropdown-menu rounded-0 m-0">
                         <a href="<?php echo base_url(); ?>reservation" class="dropdown-item">Reservation List</a>
-                        <a href="#" class="dropdown-item">Product List</a>
+                        <a href="<?php echo base_url(); ?>purchased_products" class="dropdown-item">Purchased Products</a>
                         <form method="POST" id="frmLogoutClient" action="<?php echo base_url(). 'client_login/logout'; ?>">
                             <button type="submit" class="dropdown-item" style="cursor: pointer;">Logout</button>
                         </form>

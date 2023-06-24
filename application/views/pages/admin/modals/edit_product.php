@@ -39,14 +39,19 @@
 			</div>
 
 			<div class="row form-group">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<label for="frmEditProductTxtProductAmount">Amount</label>
 					<input type="text" class="form-control" id="frmEditProductTxtProductAmount" name="amount" placeholder="Enter amount..">
 				</div>
 
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<label for="frmEditProductTxtProductQuantity">Quantity</label>
 					<input type="number" class="form-control" id="frmEditProductTxtProductQuantity" name="quantity" placeholder="Enter quantity..">
+				</div>
+
+				<div class="col-sm-4">
+					<label for="frmEditProductTxtProductExpirationDate">Expiration Date</label>
+					<input type="date" class="form-control" id="frmEditProductTxtProductExpirationDate" name="expiration_date" placeholder="Enter expiration date.." required>
 				</div>
 			</div>
 

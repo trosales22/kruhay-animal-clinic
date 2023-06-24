@@ -57,7 +57,8 @@ class Products extends REST_Controller
 				'long_desc' => trim($this->input->post('long_desc')),
 				'file_name' => $fileName,
 				'amount' => trim($this->input->post('amount')),
-				'quantity' => trim($this->input->post('quantity'))
+				'quantity' => trim($this->input->post('quantity')),
+				'expiration_date' => trim($this->input->post('expiration_date'))
 			));
 
 			$success = 1;
@@ -102,6 +103,7 @@ class Products extends REST_Controller
 				'long_desc' => trim($this->input->post('long_desc')),
 				'amount' => trim($this->input->post('amount')),
 				'quantity' => trim($this->input->post('quantity')),
+				'expiration_date' => trim($this->input->post('expiration_date'))
 			);
 
 			//start validation
@@ -133,6 +135,11 @@ class Products extends REST_Controller
 			if (empty($payload['quantity'])) {
 				$does_error_occur = TRUE;
 				$validation_error_msg .= 'Product Quantity is required.<br/>';
+			}
+
+			if (empty($payload['expiration_date'])) {
+				$does_error_occur = TRUE;
+				$validation_error_msg .= 'Product Expiration Date is required.<br/>';
 			}
 
 			$detect_if_product_img_exist = $this->product_model->detectIfProductImgExist($payload['id']);

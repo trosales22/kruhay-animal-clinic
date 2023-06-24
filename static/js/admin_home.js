@@ -120,6 +120,7 @@ $(document.body).on('click', '.btnEditProduct', function() {
 		$("textarea[id='frmEditProductTxtProductLongDesc']").val(response.long_desc);
 		$("input[id='frmEditProductTxtProductAmount']").val(response.amount);
 		$("input[id='frmEditProductTxtProductQuantity']").val(response.quantity);
+		$("input[id='frmEditProductTxtProductExpirationDate']").val(response.expiration_date);
 	});
 });
 

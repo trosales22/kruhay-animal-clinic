@@ -47,6 +47,8 @@ class Product_model extends CI_Model
 			SELECT 
 				id, name, short_desc, long_desc, amount, quantity,
 				IF( ISNULL(file_name) OR file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', file_name) ) as file_name,
+				DATE_FORMAT(expiration_date, '%M %d, %Y') as expiration_date,
+				expiration_date as raw_expiration_date,
 				DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
 			FROM " . Tables::$PRODUCTS . " ORDER BY id ASC";
 
@@ -62,7 +64,8 @@ class Product_model extends CI_Model
 		$query = "
 			SELECT 
 				id, name, short_desc, long_desc, amount, quantity,
-				IF( ISNULL(file_name) OR file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', file_name) ) as file_name
+				IF( ISNULL(file_name) OR file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', file_name) ) as file_name,
+				DATE_FORMAT(expiration_date, '%Y-%m-%d') as expiration_date
 			FROM 
 				" . Tables::$PRODUCTS . " 
 			WHERE 

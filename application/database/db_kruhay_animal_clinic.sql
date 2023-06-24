@@ -27,6 +27,7 @@ CREATE TABLE `products` (
   `file_name` varchar(500) DEFAULT NULL,
   `amount` varchar(255) DEFAULT NULL,
   `quantity` varchar(100) DEFAULT NULL,
+  `expiration_date` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),

@@ -58,7 +58,8 @@
                             <p style="text-align: left;">
                                 <b>Details:</b> <?php echo $product->short_desc;?></br>
                                 <b>Amount:</b> ₱<?php echo $product->amount;?><br/>
-                                <b>Qty:</b> <?php echo $product->quantity;?>
+                                <b>Qty:</b> <?php echo $product->quantity;?><br/>
+                                <b>Expiration:</b> <?php echo $product->expiration_date;?>
                             </p>
 
                             <?php 
@@ -71,6 +72,7 @@
                                     </div>
                                     ';
                                 }else{
+                                    if($product->raw_expiration_date >= date('Y-m-d')){
                             ?>
                             <a href="#" data-toggle="modal" data-id="<?php echo $product->id;?>" data-target="#buyProductModal" class="btnBuyProduct btn btn-success btn-icon-split">
                                 <span class="icon text-white-50">
@@ -78,7 +80,15 @@
                                 </span>
                                 <span class="text">Buy</span>
                             </a>
-                            <?php }?>
+                            <?php }else{
+                                echo '
+                                <div class="alert alert-danger">
+                                    <span class="icon text-red-50" style="margin-right: auto;">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </span> <b>Expired</b>
+                                </div>
+                                ';
+                            }}?>
                         </div>
                     </div>
                 <?php }}?>

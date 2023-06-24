@@ -62,5 +62,6 @@ $route['bookings_page'] = 'bookings';
 $route['client_registration_page'] = 'client_registration';
 $route['client_login_page'] = 'client_login';
 $route['reservation_list_page'] = 'reservation';
+$route['purchased_products_page'] = 'purchased_products';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

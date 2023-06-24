@@ -149,6 +149,7 @@
 											<th>Short Description</th>
                       <th>Amount</th>
 											<th>Quantity</th>
+                      <th>Expiration Date</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -173,6 +174,7 @@
 												<td><?php echo $product->short_desc;?></td>
 												<td>&#8369;<?php echo $product->amount;?></td>
 												<td><?php echo $product->quantity;?></td>
+                        <td><?php echo $product->expiration_date;?></td>
 												<td>
 													<a href="#" data-toggle="modal" data-id="<?php echo $product->id;?>" data-target="#editProductModal" class="btnEditProduct btn btn-success btn-icon-split">
 														<span class="icon text-white-50">
