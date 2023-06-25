@@ -156,7 +156,7 @@ async function checkStatus() {
                             confirmButtonText: 'Ok, Got It!'
                         }).then((result) => {
                             if (result.value) {
-                                location.replace(base_url() + 'products');
+                                location.replace(base_url() + 'purchased_products');
                             }
                         });
                     } else {

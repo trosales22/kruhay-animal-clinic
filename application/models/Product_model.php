@@ -142,8 +142,9 @@ class Product_model extends CI_Model
 
 			$message = "Hi " . $email_params['fullname'] . "!\n\n";
 			$message .= "Below are your purchased product details:\n\n";
-			$message .= "Product Name: " . $product_details_params['name'] . "\n";
+			$message .= "Name: " . $product_details_params['name'] . "\n";
 			$message .= "Amount: ₱" .$product_details_params['amount']  . "\n";
+			$message .= "Status: Paid\n";
 			$message .= "Date/Time: " . $product_details_params['date_purchased'] . "\n\n";
 			$message .= "Thank you for supporting Kruhay Animal Clinic.\n";
 
