@@ -38,6 +38,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?php echo base_url(); ?>static/landing_page/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>static/css/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/css/datepicker.min.css">
 </head>
 
 <body>
@@ -62,15 +63,21 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="date" id="date" data-target-input="nearest">
-                                    <input type="text" name="schedule_date" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" data-target="#date" data-toggle="datetimepicker"/>
-                                </div>
+                                <input type="text" name="schedule_date" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" autocomplete="off"/>
                             </div>
 
                             <div class="form-group">
-                                 <div class="time" id="time" data-target-input="nearest">
-                                     <input type="text" name="schedule_time" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Approximate Scheduled Time" data-target="#time" data-toggle="datetimepicker"/>
-                                </div>
+                                <select class="custom-select border-0 px-4" style="height: 47px;" name="schedule_time" required>
+                                    <option selected disabled>Select Schedule Time</option>
+                                    <option value="9am-10am">9am-10am</option>
+                                    <option value="10am-11am">10am-11am</option>
+                                    <option value="11am-12pm">11am-12pm</option>
+                                    <option value="12pm-1pm">12pm-1pm</option>
+                                    <option value="1pm-2pm">1pm-2pm</option>
+                                    <option value="2pm-3pm">2pm-3pm</option>
+                                    <option value="3pm-4pm">3pm-4pm</option>
+                                    <option value="4pm-5pm">4pm-5pm</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -214,6 +221,8 @@
     <script src="<?php echo base_url(); ?>static/landing_page/js/main.js"></script>
     <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/js/datepicker-full.min.js"></script>
+    <script src="<?php echo base_url(); ?>static/js/client_booking.js"></script>
     <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
     <!-- Stripe JS library -->
     <script src="https://js.stripe.com/v3/"></script>

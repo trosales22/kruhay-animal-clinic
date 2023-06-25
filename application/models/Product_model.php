@@ -109,10 +109,51 @@ class Product_model extends CI_Model
 			$this->db->where('id', $params['product_id']);
 			$this->db->update(Tables::$PRODUCTS);
 
+			$productData = $this->getProductById($params['product_id']);
+
+			$product_details_params = [
+				'name' => $productData[0]->name,
+				'description' => $productData[0]->short_desc,
+				'amount' => $productData[0]->amount,
+				'date_purchased' => $params['created_at']
+			];
+
+			$sessionData = $this->session->userdata('client_session');
+
+			$this->sendCheckoutProductEmailNotif($product_details_params, [
+				'email' => $sessionData['email'],
+				'fullname' => $sessionData['first_name'] . ' ' . $sessionData['last_name']
+			]);
+
 			return $this->db->insert_id();
 		} catch (PDOException $e) {
 			$msg = $e->getMessage();
 			$this->db->trans_rollback();
+		}
+	}
+
+	public function sendCheckoutProductEmailNotif(array $product_details_params, array $email_params)
+	{
+		try {
+			$success = 0;
+			$from = "support@kruhayanimalclinic.com";
+			$to = $email_params['email'];
+			$message = '';
+			$subject = "Kruhay Animal Clinic | Thankyou for buying our product!";
+
+			$message = "Hi " . $email_params['fullname'] . "!\n\n";
+			$message .= "Below are your bought product details:\n\n";
+			$message .= "Product Name: " . $product_details_params['name'] . "\n";
+			$message .= "Product Description: " . $product_details_params['description'] . "\n";
+			$message .= "Amount: ₱" .$product_details_params['amount']  . "\n";
+			$message .= "Date/Time: " . $product_details_params['date_purchased'] . "\n\n";
+			$message .= "Thank you for supporting Kruhay Animal Clinic.\n";
+
+			$headers = "From:" . $from;
+			mail($to, $subject, $message, $headers);
+			$success = 1;
+		} catch (Exception $e) {
+			$msg = $e->getMessage();
 		}
 	}
 }
