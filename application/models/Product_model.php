@@ -113,9 +113,8 @@ class Product_model extends CI_Model
 
 			$product_details_params = [
 				'name' => $productData[0]->name,
-				'description' => $productData[0]->short_desc,
 				'amount' => $productData[0]->amount,
-				'date_purchased' => $params['created_at']
+				'date_purchased' => $datetime->format('M d, Y h:i A')
 			];
 
 			$sessionData = $this->session->userdata('client_session');
@@ -142,9 +141,8 @@ class Product_model extends CI_Model
 			$subject = "Kruhay Animal Clinic | Thankyou for buying our product!";
 
 			$message = "Hi " . $email_params['fullname'] . "!\n\n";
-			$message .= "Below are your bought product details:\n\n";
+			$message .= "Below are your purchased product details:\n\n";
 			$message .= "Product Name: " . $product_details_params['name'] . "\n";
-			$message .= "Product Description: " . $product_details_params['description'] . "\n";
 			$message .= "Amount: ₱" .$product_details_params['amount']  . "\n";
 			$message .= "Date/Time: " . $product_details_params['date_purchased'] . "\n\n";
 			$message .= "Thank you for supporting Kruhay Animal Clinic.\n";
