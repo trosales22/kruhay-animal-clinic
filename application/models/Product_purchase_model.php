@@ -11,11 +11,16 @@ class Product_purchase_model extends CI_Model
                 B.name as product_name, B.amount as product_amount,
                 IF( ISNULL(B.file_name) OR B.file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', B.file_name) ) as product_file_name,
 				A.payment_method, A.address, A.status,
+				CONCAT(C.first_name, ' ', C.last_name) as customer_name,
+				C.email as customer_email,
 				DATE_FORMAT(A.created_at, '%M %d, %Y %r') as date_purchased 
 			FROM 
 				" . Tables::$PRODUCT_PURCHASES . " A 
             LEFT JOIN 
-                " . Tables::$PRODUCTS . " B ON A.product_id = B.id";
+                " . Tables::$PRODUCTS . " B ON A.product_id = B.id 
+			LEFT JOIN 
+			" . Tables::$USERS . " C ON A.user_id = C.user_id 
+			ORDER BY A.created_at DESC";
 
 		$stmt = $this->db->query($query);
 		return $stmt->result();

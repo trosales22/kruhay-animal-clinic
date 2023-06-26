@@ -300,9 +300,9 @@
                     <thead>
                       <tr>
                         <th>Product</th>
-                        <th>Address</th>
                         <th>Payment Method</th>
                         <th>Status</th>
+                        <th>Purchased By</th>
                         <th>Date Purchased</th>
                       </tr>
                     </thead>
@@ -311,9 +311,9 @@
                       <?php foreach($purchased_products as $purchased_product){?>
                         <tr>
                           <td><?php echo $purchased_product->product_name;?> <b>(&#8369;<?php echo $purchased_product->product_amount;?>)</b></td>
-                          <td><?php echo $purchased_product->address;?></td>
                           <td><?php echo $purchased_product->payment_method;?></td>
                           <td><?php echo $purchased_product->status;?></td>
+                          <td><?php echo $purchased_product->customer_name . ' <b>(' . $purchased_product->customer_email . ')</b>';?></td>
                           <td><?php echo $purchased_product->date_purchased;?></td>
                         </tr> 
                       <?php }?>
