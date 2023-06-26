@@ -313,7 +313,11 @@
                           <td><?php echo $purchased_product->product_name;?> <b>(&#8369;<?php echo $purchased_product->product_amount;?>)</b></td>
                           <td><?php echo $purchased_product->payment_method;?></td>
                           <td><?php echo $purchased_product->status;?></td>
-                          <td><?php echo $purchased_product->customer_name . ' <b>(' . $purchased_product->customer_email . ')</b>';?></td>
+                          <td>
+                            <b>Name: </b><?php echo $purchased_product->customer_name;?><br />
+                            <b>Contact #: </b><?php echo $purchased_product->customer_contact_no;?><br />
+                            <b>Email: </b><?php echo $purchased_product->customer_email;?>
+                          </td>
                           <td><?php echo $purchased_product->date_purchased;?></td>
                         </tr> 
                       <?php }?>

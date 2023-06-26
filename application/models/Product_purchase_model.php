@@ -13,6 +13,7 @@ class Product_purchase_model extends CI_Model
 				A.payment_method, A.address, A.status,
 				CONCAT(C.first_name, ' ', C.last_name) as customer_name,
 				C.email as customer_email,
+				C.contact_number as customer_contact_no,
 				DATE_FORMAT(A.created_at, '%M %d, %Y %r') as date_purchased 
 			FROM 
 				" . Tables::$PRODUCT_PURCHASES . " A 
