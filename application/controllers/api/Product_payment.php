@@ -120,7 +120,7 @@ class Product_payment extends REST_Controller
 					'user_id' => $user_id,
 					'product_id' => $_SESSION['product_id'] ?? null,
                     'status' => 'PAID',
-                    'payment_method' => 'E-Wallet',
+                    'payment_method' => 'Debit/Credit Card',
                     'address' => $_SESSION['address'] ?? null,
                     'payment_id' => $transactionID,
                     'amount' => $paidAmount

@@ -121,7 +121,7 @@ class Payment extends REST_Controller
 					'pet_name' => $_SESSION['pet_name'],
 					'schedule_date' => $_SESSION['schedule_date'],
 					'schedule_time' => $_SESSION['schedule_time'],
-					'payment_method' => 'E-Wallet',
+					'payment_method' => 'Debit/Credit Card',
 					'service_type' => $_SESSION['service_type'],
 					'address' => $_SESSION['address'],
 					'payment_id' => $transactionID,
