@@ -83,7 +83,7 @@ async function handleSubmit(e) {
                     email: email,
                     pet_name: $('input[name=pet_name').val(),
                     schedule_date: $('input[name=schedule_date').val(),
-                    schedule_time: $('input[name=schedule_time').val(),
+                    schedule_time: $('select[name=schedule_time').val(),
                     address: $('input[name=address').val(),
                     service_type: $('select[name=service_type').val()
                 }),
