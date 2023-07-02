@@ -118,7 +118,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- Stripe JS library -->
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="<?php echo base_url(); ?>static/js/client_product.js" STRIPE_PUBLISHABLE_KEY="<?php echo $this->config->item('stripe_key'); ?>" defer></script>
+    <script src="<?php echo base_url(); ?>static/js/client_product.js" STRIPE_PUBLISHABLE_KEY="<?php echo $this->config->item('stripe_key'); ?>" IS_LOGGED_IN="<?php echo $this->session->userdata('client_session') ? '1' : '0' ?>" defer></script>
     <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
 </body>
 </html>

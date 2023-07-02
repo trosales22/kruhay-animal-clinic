@@ -72,6 +72,25 @@ async function handleSubmit(e) {
         preConfirm: async(login) => {
             let name = $('#txtReservationName').val();
             let email = $('#txtReservationEmail').val();
+
+            let scheduleDate = $('input[name=schedule_date').val();
+            let scheduleTime = $('select[name=schedule_time').val();
+
+            let validateSchedRes = await fetch("api/payment/validate_sched", {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    schedule_date: scheduleDate,
+                    schedule_time: scheduleTime
+                })
+            }).then((r) => r.json());
+
+            let isSchedTaken = validateSchedRes.is_sched_taken;
+
+            if(Boolean(isSchedTaken)){
+                showMessage("Schedule already taken. Please choose another schedule.");
+                return;
+            }
             
             const { id, customer_id } = await fetch("api/payment/process", {
                 method: "POST",
@@ -82,8 +101,8 @@ async function handleSubmit(e) {
                     name: name, 
                     email: email,
                     pet_name: $('input[name=pet_name').val(),
-                    schedule_date: $('input[name=schedule_date').val(),
-                    schedule_time: $('select[name=schedule_time').val(),
+                    schedule_date: scheduleDate,
+                    schedule_time: scheduleTime,
                     address: $('input[name=address').val(),
                     service_type: $('select[name=service_type').val()
                 }),

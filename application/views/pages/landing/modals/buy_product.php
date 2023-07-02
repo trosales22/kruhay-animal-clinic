@@ -56,6 +56,13 @@
                             </span> <b>Login to proceed.</b>
                         </div>
                     <?php }?>
+
+
+                    <div class="alert alert-info">
+                        <span class="icon text-red-50" style="margin-right: auto;">
+                            <i class="fas fa-sticky-note"></i>
+                        </span> <b>No delivery. For Pick Up only.</b>
+                    </div>
                 </div>
                 
                 <div class="modal-footer">

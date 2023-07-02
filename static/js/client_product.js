@@ -12,6 +12,7 @@ function base_url() {
 
 // Get API Key
 let STRIPE_PUBLISHABLE_KEY = document.currentScript.getAttribute('STRIPE_PUBLISHABLE_KEY');
+let IS_LOGGED_IN = document.currentScript.getAttribute('IS_LOGGED_IN');
 
 // Create an instance of the Stripe object and set your publishable API key
 const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
@@ -223,13 +224,17 @@ $( document ).ready(function() {
             $(".checkout_product_quantity").text(response.quantity);
 
             if(response.quantity > 0){
-                // Check whether the payment_intent_client_secret is already exist in the URL
-                setProcessing(true);
-                if(!clientSecretParam){
-                    setProcessing(false);
-                    // Create an instance of the Elements UI library and attach the client secret
-                    initialize($('input[name=checkout_product_amount]').val());
-                }
+                if(IS_LOGGED_IN == '1'){
+                    // Check whether the payment_intent_client_secret is already exist in the URL
+                    setProcessing(true);
+                    if(!clientSecretParam){
+                        setProcessing(false);
+                        // Create an instance of the Elements UI library and attach the client secret
+                        initialize($('input[name=checkout_product_amount]').val());
+                    }
+                }else{
+                    document.querySelector("#frmProcess").style.display = "none";
+                }            
             }else{
                 document.querySelector("#frmProcess").style.display = "none";
                 document.querySelector("#btnProceedBuyProduct").style.display = "none";

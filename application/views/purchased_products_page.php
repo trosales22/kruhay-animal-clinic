@@ -53,7 +53,6 @@
                                 <thead>
                                     <tr style="background-color: #6c757d;" class="text-warning">
                                         <th>Product</th>
-                                        <th>Address</th>
                                         <th>Payment Method</th>
                                         <th>Status</th>
                                         <th>Date Purchased</th>
@@ -64,7 +63,6 @@
                                     <?php foreach($purchased_products as $purchased_product){?>
                                         <tr>
                                             <td><?php echo $purchased_product->product_name . ' (&#8369;' . $purchased_product->product_amount . ')'; ?></td>
-                                            <td><?php echo $purchased_product->address;?></td>
                                             <td><?php echo $purchased_product->payment_method;?></td>
                                             <td><?php echo $purchased_product->status;?></td>
                                             <td><?php echo $purchased_product->date_purchased;?></td>

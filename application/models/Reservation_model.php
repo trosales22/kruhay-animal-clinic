@@ -71,6 +71,21 @@ class Reservation_model extends CI_Model
 		return $stmt->result();
 	}
 
+	public function checkExistingReservationSched($scheduleDate, $scheduleTime)
+	{
+		$params = array($scheduleDate, $scheduleTime);
+		$query = "
+			SELECT 
+				schedule_date, schedule_time
+			FROM 
+				" . Tables::$RESERVATIONS . " 
+			WHERE 
+				schedule_date = ? AND schedule_time = ?";
+
+		$stmt = $this->db->query($query, $params);
+		return $stmt->result();
+	}
+
 	public function getAllByUserId($userId)
 	{
 		$params = array($userId);
