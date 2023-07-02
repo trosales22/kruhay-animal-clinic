@@ -86,6 +86,22 @@ class Reservation_model extends CI_Model
 		return $stmt->result();
 	}
 
+	public function getReservationTimeByDate($scheduleDate)
+	{
+		$params = array($scheduleDate);
+		$query = "
+			SELECT 
+				DISTINCT schedule_time
+			FROM 
+				" . Tables::$RESERVATIONS . " 
+			WHERE 
+				schedule_date = ?";
+
+		$stmt = $this->db->query($query, $params);
+		$resArr = $stmt->result_array();
+		return array_column($resArr, "schedule_time");
+	}
+
 	public function getAllByUserId($userId)
 	{
 		$params = array($userId);

@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="schedule_date" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" autocomplete="off"/>
+                                <input type="text" name="schedule_date" id="schedule_date" required class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" autocomplete="off"/>
                             </div>
 
                             <div class="form-group">
