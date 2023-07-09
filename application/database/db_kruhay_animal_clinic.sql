@@ -41,6 +41,7 @@ CREATE TABLE `services` (
   `name` varchar(100) NOT NULL,
   `short_desc` text,
   `long_desc` text,
+  `file_name` varchar(500) DEFAULT NULL,
   `amount` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,

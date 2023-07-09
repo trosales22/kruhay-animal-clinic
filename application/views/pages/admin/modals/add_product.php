@@ -18,7 +18,7 @@
 
 				<div class="col-sm-6">
 					<label for="imgProductDisplayPhoto">Display Photo</label>
-					<input type="file" id="imgProductDisplayPhoto" name="product_img" accept="image/png, image/jpeg" />
+					<input type="file" id="imgProductDisplayPhoto" name="product_img" accept="image/png, image/jpeg, image/jpg" />
 				</div>
 			</div>
 			

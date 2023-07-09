@@ -47,9 +47,16 @@
                 <?php foreach($services as $service){?>
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                            <img src="<?php echo base_url(); ?>static/images/pets_symbol.png" style="width: 130px; height: 130px; border-radius: 50%; margin-left: auto; margin-right: auto;" />
+                            <?php 
+                                if(empty($service->file_name)){
+                                    echo "<img src='" . base_url() . "static/images/pets_symbol.png' style='width: 130px; height: 130px; border-radius: 50%; margin-left: auto; margin-right: auto;' />";
+                                }else{
+                                    echo "<img src='" . $service->file_name . "' style='width: 130px; height: 130px; border-radius: 50%; margin-left: auto; margin-right: auto;' />";
+                                }
+                            ?>
                             <h4 class="mb-3">
                                 <?php echo $service->name;?><br/>
+                                <span class="text-secondary">(<?php echo $service->short_desc;?>)</span><br/>
                                 <span class="text-primary">₱<?php echo $service->amount;?></span>
                             </h4>
                         </div>

@@ -44,7 +44,9 @@ class Service_model extends CI_Model
 	{
 		$query = "
 			SELECT 
-				id, name, short_desc, long_desc, amount, DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
+				id, name, short_desc, long_desc, 
+				IF( ISNULL(file_name) OR file_name='', NULL, CONCAT('" . base_url() . "uploads/services/', file_name) ) as file_name,
+				amount, DATE_FORMAT(created_at, '%M %d, %Y %r') as created_at 
 			FROM " . Tables::$SERVICES . " ORDER BY id DESC";
 
 		$stmt = $this->db->query($query);
@@ -60,6 +62,24 @@ class Service_model extends CI_Model
 			SELECT 
                 id, name, short_desc, long_desc, amount
 			FROM 
+				" . Tables::$SERVICES . " 
+			WHERE 
+				id = ?
+		";
+
+		$stmt = $this->db->query($query, $params);
+		return $stmt->result();
+	}
+
+	public function detectIfServiceImgExist($productId)
+	{
+		$params = array($productId);
+
+		$query = "
+			SELECT 
+				IF( ISNULL(file_name) OR file_name='', 'NO IMAGE', CONCAT('" . base_url() . "uploads/services/', file_name) ) as service_display_photo,
+				IF( ISNULL(file_name) OR file_name='', 'NO IMAGE', file_name) as service_display_photo_raw 
+			FROM
 				" . Tables::$SERVICES . " 
 			WHERE 
 				id = ?

@@ -251,6 +251,7 @@
                   <table class="table table-bordered" id="tbl_services" width="100%" cellspacing="0">
                     <thead>
                       <tr>
+                        <th>Display Photo</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Amount</th>
@@ -261,6 +262,19 @@
                     <tbody>
                       <?php foreach($services as $service){?>
                         <tr>
+                          <td style="text-align: center;">
+                            <?php 
+                              if(empty($service->file_name) || is_null($service->file_name)){
+                                echo '<div class="alert alert-danger">
+                                        <span class="icon text-red-50" style="margin-right: auto;">
+                                          <i class="fas fa-exclamation-triangle"></i>
+                                        </span> <b>NO IMAGE AVAILABLE!</b>
+                                      </div>';
+                              }else{
+                                echo "<img src='" . $service->file_name . "' style='width: 150px; height: 150px;' />";
+                              }
+                            ?>
+                          </td>
                           <td><?php echo $service->name;?></td>
                           <td><?php echo $service->short_desc;?></td>
                           <td>&#8369;<?php echo $service->amount;?></td>
