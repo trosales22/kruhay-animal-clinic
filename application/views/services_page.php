@@ -56,7 +56,7 @@
                             ?>
                             <h4 class="mb-3">
                                 <?php echo $service->name;?><br/>
-                                <span class="text-secondary" style="font-size: 15px;"><?php echo $service->short_desc;?></span><br/>
+                                <span class="text-secondary" style="font-size: 15px; line-height: normal;"><?php echo $service->short_desc;?></span><br/>
                                 <span class="text-primary">₱<?php echo $service->amount;?></span>
                             </h4>
                         </div>
