@@ -49,3 +49,70 @@ function resetScheduleTime(){
     $('select[name=schedule_time]').append($('<option>').val('3pm-4pm').text('3pm-4pm'));
     $('select[name=schedule_time]').append($('<option>').val('4pm-5pm').text('4pm-5pm'));
 }
+
+function reserveBooking(){
+	$("#frmReserveBooking").submit(function(e) {
+		e.preventDefault();
+		var formAction = e.currentTarget.action;
+		var formData = new FormData(this);
+		var formType = "POST";
+		
+		Swal.fire({
+			title: 'Confirmation',
+			text: "Are you sure you want to continue?",
+			icon: 'warning',
+			showCancelButton: true,
+			reverseButtons: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+			if (result.value) {
+				$.ajax({
+					url: formAction,
+					type: formType,
+					data: formData,
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+					success: function(data) {
+						var obj = JSON.parse(data);
+							
+						if(obj.flag === 0){
+							Swal.fire(
+								'Error!',
+								obj.msg,
+								'error'
+							);
+						}else{
+							Swal.fire({
+								title: 'Success!',
+								text: obj.msg,
+								icon: 'success',
+								allowOutsideClick: false,
+								allowEscapeKey: false,
+								showCancelButton: false,
+								confirmButtonText: 'Ok, Got It!'
+							}).then((result) => {
+								if (result.value) {
+									location.replace(base_url() + 'reservation');
+								}
+							});
+						}
+					},
+					error: function(xhr, status, error){
+						var errorMessage = xhr.status + ': ' + xhr.statusText;
+						Swal.fire(
+							'Error!',
+							errorMessage,
+							'error'
+						);
+					 }
+				});	
+			}
+		});
+	});
+}
+
+reserveBooking();

@@ -53,7 +53,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form id="paymentFrm" class="py-2" type="POST">
+                        <form id="frmReserveBooking" class="py-2" type="POST" action="<?php echo base_url(). 'api/reservation/reserve_booking'; ?>">
                             <input type="text" id="txtReservationUserId" value="<?php echo $userId; ?>" style="display: none;"/>
                             <input type="text" id="txtReservationName" value="<?php echo $fullName; ?>" style="display: none;"/>
                             <input type="text" id="txtReservationEmail" value="<?php echo $email; ?>" style="display: none;"/>
@@ -92,15 +92,10 @@
                                     <option value="Pet Boarding">Pet Boarding</option>
                                 </select>
                             </div>
-                            <h5 class="m-0">Reservation Fee: &#8369;200.00</h5><br/>
 
                             <?php
                             if($sessionData){
                             ?>
-                            <div id="paymentElement">
-                                <!--Stripe.js injects the Payment Element-->
-                            </div><br/>
-                            
                             <div>
                                 <button id="submitBtn" class="btn btn-success btn-block border-0 py-3">Book Now</button>
                             </div>
@@ -112,11 +107,6 @@
                             </div>
                             <?php }?>
                         </form>
-
-                        <!-- Display processing notification -->
-                        <div id="frmProcess" class="hidden">
-                            <span class="ring"></span> Processing...
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
@@ -224,8 +214,5 @@
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/js/datepicker-full.min.js"></script>
     <script src="<?php echo base_url(); ?>static/js/client_booking.js"></script>
     <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
-    <!-- Stripe JS library -->
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="<?php echo base_url(); ?>static/js/reservation_checkout.js" STRIPE_PUBLISHABLE_KEY="<?php echo $this->config->item('stripe_key'); ?>" defer></script>
 </body>
 </html>

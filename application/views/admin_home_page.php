@@ -314,7 +314,6 @@
                     <thead>
                       <tr>
                         <th>Product</th>
-                        <th>Payment Method</th>
                         <th>Status</th>
                         <th>Purchased By</th>
                         <th>Date Purchased</th>
@@ -325,7 +324,6 @@
                       <?php foreach($purchased_products as $purchased_product){?>
                         <tr>
                           <td><?php echo $purchased_product->product_name;?> <b>(&#8369;<?php echo $purchased_product->product_amount;?>)</b></td>
-                          <td><?php echo $purchased_product->payment_method;?></td>
                           <td><?php echo $purchased_product->status;?></td>
                           <td>
                             <b>Name: </b><?php echo $purchased_product->customer_name;?><br />

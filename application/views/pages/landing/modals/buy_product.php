@@ -13,7 +13,7 @@
 <div class="modal fade" id="buyProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form id="frmBuyProduct" class="py-2" type="POST">
+            <form id="frmBuyProduct" class="py-2" type="POST" action="<?php echo base_url(). 'api/product_payment/purchase'; ?>">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Buy <strong><span class="checkout_product_name"></span></strong></h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -40,23 +40,15 @@
                     </h5>
 
                     <?php
-                        if($sessionData){
+                        if(!$sessionData){
                         ?>
-                        <div id="paymentElement">
-                            <!--Stripe.js injects the Payment Element-->
-                        </div><br/>
-                        
-                        <div>
-                            <button id="btnProceedBuyProduct" class="btn btn-success btn-block border-0 py-3" style="display: none;">Proceed</button>
-                        </div>
-                        <?php }else{?>
                         <div class="alert alert-danger">
                             <span class="icon text-red-50" style="margin-right: auto;">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </span> <b>Login to proceed.</b>
                         </div>
                     <?php }?>
-
+                    <br/>
 
                     <div class="alert alert-info">
                         <span class="icon text-red-50" style="margin-right: auto;">
@@ -66,14 +58,16 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" id="btnCancelBuyProduct" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger border-0 py-3" id="btnCancelBuyProduct" type="button" data-dismiss="modal">Cancel</button>
+                    <?php
+                        if($sessionData){
+                        ?>
+                        <div>
+                            <button id="btnProceedBuyProduct" class="btn btn-success btn-block border-0 py-3">Proceed</button>
+                        </div>
+                    <?php }?>
                 </div>
             </form>
-
-            <!-- Display processing notification -->
-            <div id="frmProcess" class="hidden">
-                <span class="ring"></span> Processing...
-            </div>
         </div>
     </div>
 </div>
