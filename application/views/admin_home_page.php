@@ -108,7 +108,7 @@
           <button class="tablinks active" onclick="openTab(event, 'Reservations')">Reservations</button>
           <button class="tablinks" onclick="openTab(event, 'Products')">Products</button>
           <button class="tablinks" onclick="openTab(event, 'Services')">Services</button>
-          <button class="tablinks" onclick="openTab(event, 'PurchasedProducts')">Purchased Products</button>
+          <button class="tablinks" onclick="openTab(event, 'CheckoutProducts')">Checkout Products</button>
         </div>
 
         <!-- Tab content -->
@@ -303,9 +303,9 @@
           </div>
         </div>
 
-        <div id="PurchasedProducts" class="tabcontent">
+        <div id="CheckoutProducts" class="tabcontent">
           <div class="container-fluid">
-            <h1 class="h3 mb-2 text-gray-800">Purchased Products</h1>
+            <h1 class="h3 mb-2 text-gray-800">Checkout Products</h1>
             
             <div class="card shadow mb-4">
               <div class="card-body">
@@ -315,7 +315,7 @@
                       <tr>
                         <th>Product</th>
                         <th>Status</th>
-                        <th>Purchased By</th>
+                        <th>Checkout By</th>
                         <th>Date Created</th>
                       </tr>
                     </thead>
