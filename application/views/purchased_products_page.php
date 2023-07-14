@@ -42,7 +42,7 @@
     <!-- Contact Start -->
     <div class="container-fluid pt-5">
         <div class="d-flex flex-column text-center mb-5 pt-5">
-            <h1 class="display-4 m-0"><span class="text-secondary">Purchased</span> <span class="text-primary">Products</span></h1>
+            <h1 class="display-4 m-0"><span class="text-secondary">Checkout</span> <span class="text-primary">Products</span></h1>
         </div>
         <div class="row justify-content-center col-12 col-sm-12 mb-5">
             <div class="col-12 col-sm-12 mb-5">
