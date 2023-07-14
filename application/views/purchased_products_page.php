@@ -54,7 +54,7 @@
                                     <tr style="background-color: #6c757d;" class="text-warning">
                                         <th>Product</th>
                                         <th>Status</th>
-                                        <th>Date Purchased</th>
+                                        <th>Date & Time</th>
                                     </tr>
                                 </thead>
                                 

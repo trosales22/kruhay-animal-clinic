@@ -10,7 +10,7 @@ class Product_purchase_model extends CI_Model
 			SELECT 
                 B.name as product_name, B.amount as product_amount,
                 IF( ISNULL(B.file_name) OR B.file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', B.file_name) ) as product_file_name,
-				A.payment_method, A.address, A.status,
+				A.address, A.status,
 				CONCAT(C.first_name, ' ', C.last_name) as customer_name,
 				C.email as customer_email,
 				C.contact_number as customer_contact_no,
@@ -34,7 +34,7 @@ class Product_purchase_model extends CI_Model
 			SELECT 
                 B.name as product_name, B.amount as product_amount,
                 IF( ISNULL(B.file_name) OR B.file_name='', NULL, CONCAT('" . base_url() . "uploads/products/', B.file_name) ) as product_file_name,
-				A.payment_method, A.address, A.status,
+				A.address, A.status,
 				DATE_FORMAT(A.created_at, '%M %d, %Y %r') as date_purchased 
 			FROM 
 				" . Tables::$PRODUCT_PURCHASES . " A 

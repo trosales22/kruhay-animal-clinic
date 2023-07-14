@@ -316,7 +316,7 @@
                         <th>Product</th>
                         <th>Status</th>
                         <th>Purchased By</th>
-                        <th>Date Purchased</th>
+                        <th>Date Created</th>
                       </tr>
                     </thead>
                     
