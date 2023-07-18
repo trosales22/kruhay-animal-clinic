@@ -78,7 +78,7 @@
                                 <span class="icon text-white-50">
                                     <i class="fas fa-shopping-cart"></i>
                                 </span>
-                                <span class="text">Buy</span>
+                                <span class="text">Order</span>
                             </a>
                             <?php }else{
                                 echo '
