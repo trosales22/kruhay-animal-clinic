@@ -109,6 +109,7 @@
           <button class="tablinks" onclick="openTab(event, 'Products')">Products</button>
           <button class="tablinks" onclick="openTab(event, 'Services')">Services</button>
           <button class="tablinks" onclick="openTab(event, 'CheckoutProducts')">Checkout Products</button>
+          <button class="tablinks" onclick="openTab(event, 'Feedbacks')">Feedbacks</button>
         </div>
 
         <!-- Tab content -->
@@ -331,6 +332,44 @@
                             <b>Email: </b><?php echo $purchased_product->customer_email;?>
                           </td>
                           <td><?php echo $purchased_product->date_purchased;?></td>
+                        </tr> 
+                      <?php }?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="Feedbacks" class="tabcontent">
+          <div class="container-fluid">
+            <h1 class="h3 mb-2 text-gray-800">Feedbacks</h1>
+            
+            <div class="card shadow mb-4">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="tbl_feedbacks" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>User Details</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Date Created</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <?php foreach($feedbacks as $feedback){?>
+                        <tr>
+                          <td>
+                            <b>Name: </b><?php echo $feedback->name;?><br />
+                            <b>Contact #: </b><?php echo $feedback->mobile_number;?><br />
+                            <b>Email: </b><?php echo $feedback->email;?>
+                          </td>
+                          <td><?php echo $feedback->subject;?></td>
+                          <td><?php echo $feedback->message;?></td>
+                          <td><?php echo $feedback->created_at;?></td>
                         </tr> 
                       <?php }?>
                     </tbody>

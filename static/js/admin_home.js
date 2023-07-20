@@ -28,6 +28,7 @@ $('#tbl_reservations').DataTable();
 $('#tbl_products').DataTable();
 $('#tbl_services').DataTable();
 $('#tbl_purchased_products').DataTable();
+$('#tbl_feedbacks').DataTable();
 
 $('#inputProductAmount').maskMoney();
 $('#inputServiceAmount').maskMoney();
