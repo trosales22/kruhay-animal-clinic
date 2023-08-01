@@ -19,7 +19,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
-    <link href="<?php echo base_url(); ?>static/images/logo.ico" rel="icon">
+    <link href="static/images/logo.ico" rel="icon">
     <meta name="description" content="Kruhay Animal Clinic">
 
     <!-- Google Web Fonts -->
@@ -29,15 +29,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Flaticon Font -->
-    <link href="<?php echo base_url(); ?>static/landing_page/lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="static/landing_page/lib/flaticon/font/flaticon.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="<?php echo base_url(); ?>static/landing_page/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>static/landing_page/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="static/landing_page/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/landing_page/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?php echo base_url(); ?>static/landing_page/css/style.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>static/css/sweetalert2.min.css" rel="stylesheet">
+    <link href="static/landing_page/css/style.css" rel="stylesheet">
+    <link href="static/css/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/css/datepicker.min.css">
 </head>
 
@@ -201,18 +201,18 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/landing_page/lib/easing/easing.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/landing_page/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/landing_page/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/landing_page/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/landing_page/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="static/landing_page/lib/easing/easing.min.js"></script>
+    <script src="static/landing_page/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="static/landing_page/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="static/landing_page/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="static/landing_page/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="<?php echo base_url(); ?>static/landing_page/js/main.js"></script>
-    <script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
+    <script src="static/landing_page/js/main.js"></script>
+    <script src="static/SBAdmin/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/js/datepicker-full.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/client_booking.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/client_logout.js"></script>
+    <script src="static/js/client_booking.js"></script>
+    <script src="static/js/client_logout.js"></script>
 </body>
 </html>

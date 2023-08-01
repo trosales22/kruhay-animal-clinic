@@ -4,7 +4,7 @@
 	<link href="<?php echo base_url(); ?>static/css/tailwind.min.css" rel="stylesheet"/>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
-	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>static/images/logo.ico"/>
+	<link rel="icon" type="image/png" href="static/images/logo.ico"/>
 	<style>
 		body {
 			font-family: "Inter", sans-serif;
@@ -26,9 +26,9 @@
 			color: #fff;
 		}
 	</style>
-	<link href="<?php echo base_url(); ?>static/css/sweetalert2.min.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>static/css/parsley.css" rel="stylesheet">
-	<script src="<?php echo base_url(); ?>static/js/libraries/alpine/alpine.js" defer></script>
+	<link href="static/css/sweetalert2.min.css" rel="stylesheet">
+	<link href="static/css/parsley.css" rel="stylesheet">
+	<script src="static/js/libraries/alpine/alpine.js" defer></script>
 </head>
 
 <body class="min-h-screen bg-gray-100 text-gray-900 justify-center">
@@ -88,9 +88,9 @@
 		<div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="background-image: url('static/images/running_pets_bg.jpg');"></div>
 	</div>
 </div>
-<script src="<?php echo base_url(); ?>static/SBAdmin/vendor/jquery/jquery.min.js"></script>
+<script src="static/SBAdmin/vendor/jquery/jquery.min.js"></script>
 <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script src="<?php echo base_url(); ?>static/js/client_registration.js"></script>
+<script src="static/js/client_registration.js"></script>
 </body>
 </html>
