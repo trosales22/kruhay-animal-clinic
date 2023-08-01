@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 header('Access-Control-Allow-Origin: *');
 require APPPATH . 'libraries/REST_Controller.php';
 

@@ -21,6 +21,10 @@ $("#frmLoginAdmin").submit(function(e) {
 		url: actionUrl,
 		type: 'POST',
 		data: $("#frmLoginAdmin").serialize(),
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		},
 		success: function(data) {
 			var res = $.parseJSON(data);
 

@@ -32,6 +32,10 @@ function buyProduct(){
 					url: formAction,
 					type: formType,
 					data: formData,
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,

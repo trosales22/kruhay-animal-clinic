@@ -58,6 +58,10 @@ function addProduct(){
 					url: formAction,
 					type: formType,
 					data: formData,
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,
@@ -148,6 +152,10 @@ function modifyProduct(){
 					url: formAction,
 					type: formType,
 					data: formData,
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,
@@ -211,6 +219,10 @@ function deleteProduct(){
 				$.ajax({
 					url: base_url() + 'api/products/delete_product?product_id=' + productId,
 					type: 'DELETE',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,
@@ -279,6 +291,10 @@ function addService(){
 					url: formAction,
 					type: formType,
 					data: formData,
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,
@@ -365,6 +381,10 @@ function modifyService(){
 					url: formAction,
 					type: formType,
 					data: formData,
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,
@@ -428,6 +448,10 @@ function deleteService(){
 				$.ajax({
 					url: base_url() + 'api/services/delete_service?service_id=' + serviceId,
 					type: 'DELETE',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
 					processData: false,
 					contentType: false,
 					cache: false,
