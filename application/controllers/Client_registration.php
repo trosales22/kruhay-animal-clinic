@@ -20,7 +20,6 @@ class Client_registration extends CI_Controller {
 		try{
 			$is_success = 0;
 			$msg = array();
-			$session_data = $this->session->userdata('logged_in');
 
 			$payload = array(
 				'first_name' => trim($this->input->post('first_name')),
